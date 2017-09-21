@@ -1,0 +1,28 @@
+package com.example.alunos.meufut;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void cronometro(View v) {
+        Intent it = new Intent(this, Cronometro.class);
+        startActivity(it);
+    }
+    /*
+    public void DivisaoTime(View v) {
+        Intent it = new Intent(this, DivisaodeTime.class);
+        startActivity(it);
+    }
+    public void DivisaoDinheiro(View v) {
+        Intent it = new Intent(this, DivisaodeDinheiro.class);
+        startActivity(it);
+    }*/
+}
