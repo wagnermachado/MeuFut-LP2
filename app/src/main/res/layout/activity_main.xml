@@ -38,6 +38,7 @@
             android:layout_below="@+id/button"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
+            android:onClick="divisaoDinheiro"
             android:text="Divisão do dinheiro" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

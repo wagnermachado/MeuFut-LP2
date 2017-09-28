@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
     public void cronometro(View v) {
         Intent it = new Intent(this, Cronometro.class);
@@ -20,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
     public void DivisaoTime(View v) {
         Intent it = new Intent(this, DivisaodeTime.class);
         startActivity(it);
-    }
-    public void DivisaoDinheiro(View v) {
-        Intent it = new Intent(this, DivisaodeDinheiro.class);
-        startActivity(it);
     }*/
+    public void divisaoDinheiro(View v) {
+        Intent it = new Intent(this, DivisaoDinheiro.class);
+        startActivity(it);
+    }
 }

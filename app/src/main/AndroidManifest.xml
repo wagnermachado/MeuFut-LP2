@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cronometro"></activity>
+        <activity android:name=".DivisaoDinheiro"></activity>
     </application>
 
 </manifest>

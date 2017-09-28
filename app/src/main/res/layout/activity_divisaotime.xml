@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_marginBottom="207dp"
+            android:onClick="divd"
+            android:text="Calcular" />
+
+        <EditText
+            android:id="@+id/editValalug"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button4"
+            android:layout_alignStart="@+id/editNumjog"
+            android:layout_marginBottom="72dp"
+            android:ems="7"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editNumjog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView4"
+            android:layout_marginBottom="72dp"
+            android:layout_marginStart="30dp"
+            android:layout_toEndOf="@+id/textView3"
+            android:ems="7"
+            android:inputType="numberSigned" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editNumjog"
+            android:layout_alignBottom="@+id/editNumjog"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:text="Número de Jogadores :" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_alignTop="@+id/editValalug"
+            android:layout_marginStart="10dp"
+            android:text="Valor Aluguel :" />
+
+        <TextView
+            android:id="@+id/textTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/button4"
+            android:layout_alignStart="@+id/editValalug"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="27dp" />
+
+    </RelativeLayout>
+</LinearLayout>

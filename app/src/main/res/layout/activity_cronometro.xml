@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <LinearLayout     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">>
 
@@ -10,25 +11,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@android:color/holo_blue_light"
         android:textSize="40dip" />
 
-        <Button
-            android:id="@+id/btnStart"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="INICIAR" />
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:text="INICIAR" />
 
-        <Button
+    <Button
         android:id="@+id/btnStop"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
         android:text="PARAR" />
 
     <Button
         android:id="@+id/btnBlank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:background="@android:color/holo_green_dark"
+        android:text="Zerar" />
 
 </LinearLayout>
 
