@@ -17,11 +17,12 @@ public class MainActivity extends AppCompatActivity {
         Intent it = new Intent(this, Cronometro.class);
         startActivity(it);
     }
-    /*
-    public void DivisaoTime(View v) {
-        Intent it = new Intent(this, DivisaodeTime.class);
+
+    public void divisaoTimes(View v) {
+        Intent it = new Intent(this, DivisaoTimes.class);
         startActivity(it);
-    }*/
+    }
+
     public void divisaoDinheiro(View v) {
         Intent it = new Intent(this, DivisaoDinheiro.class);
         startActivity(it);

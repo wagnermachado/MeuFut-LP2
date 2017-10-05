@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".Cronometro"></activity>
         <activity android:name=".DivisaoDinheiro"></activity>
+        <activity android:name=".DivisaoTimes"></activity>
+        <activity android:name=".OrganizarTimes"></activity>
     </application>
 
 </manifest>
