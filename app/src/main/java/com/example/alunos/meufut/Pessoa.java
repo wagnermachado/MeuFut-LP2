@@ -1,41 +1,43 @@
 package com.example.alunos.meufut;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by alunos on 05/10/17.
  */
 
-public class Pessoa {
+public class Pessoa implements Parcelable{
 
     private String nome;
-    private int pg, og;
 
     public Pessoa(String nome) {
         this.nome = nome;
-        this.pg = 0;
-        this.og = 0;
     }
 
-    public String getNome() {
-        return nome;
+    protected Pessoa(Parcel in) {
+        nome = in.readString();
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public static final Creator<Pessoa> CREATOR = new Creator<Pessoa>() {
+        @Override
+        public Pessoa createFromParcel(Parcel in) {
+            return new Pessoa(in);
+        }
+
+        @Override
+        public Pessoa[] newArray(int size) {
+            return new Pessoa[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public int getPg() {
-        return pg;
-    }
-
-    public void setPg(int pg) {
-        this.pg = pg;
-    }
-
-    public int getOg() {
-        return og;
-    }
-
-    public void setOg(int og) {
-        this.og = og;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nome);
     }
 }

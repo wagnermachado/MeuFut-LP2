@@ -15,13 +15,13 @@ import java.util.ArrayList;
 
 public class DivisaoTimes extends AppCompatActivity {
 
+    ArrayList<Pessoa> lista = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
     }
-
-    public ArrayList<Pessoa> lista = new ArrayList<>();
 
     public void mostraLista() {
         int tam = lista.size();
@@ -36,12 +36,16 @@ public class DivisaoTimes extends AppCompatActivity {
 
         lista.add(new Pessoa(nome));
 
+        nome1.setText("");
+
         this.mostraLista();
 
     }
 
     public void confirmar(View v) {
+
         Intent it = new Intent(this, OrganizarTimes.class);
+        it.putParcelableArrayListExtra("lista", lista);
         startActivity(it);
     }
 
