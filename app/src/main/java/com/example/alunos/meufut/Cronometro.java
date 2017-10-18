@@ -14,6 +14,8 @@ import android.widget.Chronometer;
 
 public class Cronometro extends AppCompatActivity{
 
+
+    private long lastPause;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -24,17 +26,23 @@ public class Cronometro extends AppCompatActivity{
         Button iniciar = (Button) findViewById(R.id.btnStart);
         Button zerar = (Button) findViewById (R.id.btnBlank);
         Button parar = (Button) findViewById(R.id.btnStop);
+        relogio.setBase(SystemClock.elapsedRealtime());
+
 
         iniciar.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) { relogio.start();}
+            public void onClick(View v) {   relogio.start();relogio.setBase(relogio.getBase() + SystemClock.elapsedRealtime() - lastPause);
+
+                }
         });
 
         parar.setOnClickListener(new Button.OnClickListener() {
-           public void onClick(View v) { relogio.stop(); }
+           public void onClick(View v) {  lastPause = SystemClock.elapsedRealtime();
+               relogio.stop();  }
         });
 
         zerar.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) { relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); }
+            public void onClick(View v) { relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
+            }
         });
 
     }

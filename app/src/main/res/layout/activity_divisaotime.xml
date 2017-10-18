@@ -13,8 +13,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/textView4"
-            android:layout_marginBottom="207dp"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_marginBottom="150dp"
             android:onClick="divd"
             android:text="Calcular" />
 
@@ -22,18 +22,18 @@
             android:id="@+id/editValalug"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/button4"
-            android:layout_alignStart="@+id/editNumjog"
-            android:layout_marginBottom="72dp"
+            android:layout_marginBottom="86dp"
             android:ems="7"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:layout_above="@+id/button4"
+            android:layout_alignStart="@+id/editNumjog" />
 
         <EditText
             android:id="@+id/editNumjog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/textView4"
-            android:layout_marginBottom="72dp"
+            android:layout_above="@+id/editValalug"
+            android:layout_marginBottom="74dp"
             android:layout_marginStart="30dp"
             android:layout_toEndOf="@+id/textView3"
             android:ems="7"
