@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,11 +17,25 @@ import java.util.ArrayList;
 public class DivisaoTimes extends AppCompatActivity {
 
     ArrayList<Pessoa> lista = new ArrayList<>();
+    Button confirmar;
+    Intent it;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
+
+        confirmar = (Button) findViewById(R.id.btnContinuar);
+        it = new Intent(this, OrganizarTimes.class);
+
+        confirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                it.putParcelableArrayListExtra("lista", lista);
+                startActivity(it);
+            }
+
+        });
     }
 
     public void mostraLista() {
@@ -41,14 +56,5 @@ public class DivisaoTimes extends AppCompatActivity {
         this.mostraLista();
 
     }
-
-    public void confirmar(View v) {
-
-        Intent it = new Intent(this, OrganizarTimes.class);
-        it.putParcelableArrayListExtra("lista", lista);
-        startActivity(it);
-    }
-
-
-
 }
+

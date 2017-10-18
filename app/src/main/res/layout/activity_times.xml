@@ -41,7 +41,6 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btnCadastrar"
         android:layout_marginTop="36dp"
-        android:onClick="confirmar"
         android:text="Confirmar" />
 
     <TextView
