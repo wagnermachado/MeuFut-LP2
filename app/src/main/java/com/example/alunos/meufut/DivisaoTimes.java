@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.example.alunos.meufut.Pessoa;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class DivisaoTimes extends AppCompatActivity {
     ArrayList<Pessoa> lista = new ArrayList<>();
     Button confirmar;
     Intent it;
+    Pessoa pessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +41,28 @@ public class DivisaoTimes extends AppCompatActivity {
     }
 
     public void mostraLista() {
-        int tam = lista.size();
+        String list = null;
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (i == 0) {
+                pessoa = lista.get(i);
+                list = pessoa.getNome();
+            } else {
+                pessoa = lista.get(i);
+                list = list + " " + pessoa.getNome();
+            }
+        }
 
         TextView text = (TextView) findViewById(R.id.txtLista);
-        text.setText(String.valueOf(tam));
+        text.setText(String.valueOf(list));
     }
 
     public void cadastrar(View v) {
         EditText nome1 = (EditText) findViewById(R.id.txtNome);
         String nome = nome1.getText().toString();
 
-        lista.add(new Pessoa(nome));
+        if (nome != " ")
+            lista.add(new Pessoa(nome));
 
         nome1.setText("");
 

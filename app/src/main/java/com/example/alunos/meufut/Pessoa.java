@@ -40,4 +40,8 @@ public class Pessoa implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nome);
     }
+
+    public String getNome() {
+        return this.nome;
+    }
 }
