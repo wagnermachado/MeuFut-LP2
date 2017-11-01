@@ -29,5 +29,10 @@ public class MainActivity extends AppCompatActivity {
         Intent it = new Intent(this, DivisaoDinheiro.class);
         startActivity(it);
     }
+
+    public void localizarQuadra(View v) {
+        Intent it = new Intent(this, NavegadorInternet.class);
+        startActivity(it);
+    }
 }
 

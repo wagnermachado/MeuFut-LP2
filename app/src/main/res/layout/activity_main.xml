@@ -10,13 +10,13 @@
         android:layout_width="403dp"
         android:layout_height="585dp"
         tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="11dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp">
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="207dp"
             android:layout_height="176dp"
-            android:layout_marginTop="51dp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="@+id/button2"
             app:layout_constraintRight_toRightOf="@+id/button2"
@@ -26,7 +26,8 @@
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp" />
 
         <Button
 
@@ -49,26 +50,39 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/button"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/button"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="36dp"
             android:background="?android:attr/colorButtonNormal"
             android:onClick="divisaoTimes"
             android:text="Divisão de Times"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/imageView4"
+            android:layout_alignStart="@+id/button"
+            android:layout_alignEnd="@+id/button" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button6"
             android:layout_below="@+id/button"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:width="@android:dimen/thumbnail_width"
             android:background="?android:attr/colorButtonNormal"
             android:onClick="divisaoDinheiro"
             android:text="Divisão do dinheiro"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageView4"
+            android:layout_below="@+id/button3"
+            android:layout_marginTop="8dp"
+            android:width="@android:dimen/thumbnail_width"
+            android:background="?android:attr/colorButtonNormal"
+            android:onClick="localizarQuadra"
+            android:text="PROCURAR QUADRAS"
             android:textColor="@android:color/black" />
 
     </RelativeLayout>
