@@ -21,6 +21,7 @@
         <activity android:name=".DivisaoTimes"></activity>
         <activity android:name=".OrganizarTimes"></activity>
         <activity android:name=".NavegadorInternet"></activity>
+        <activity android:name=".FimDeJogo"></activity>
     </application>
 
 </manifest>

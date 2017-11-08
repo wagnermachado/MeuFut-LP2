@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
+        jar="/home/alunos/Área de Trabalho/pasta sem título/MeuFut-LP2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="f3dbf075b44ad12bce2bfc43c0c5fb5955227e10">
+        <dex dex="/home/alunos/Área de Trabalho/pasta sem título/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c0b9f67d0960030c772f7143d219c27f6a1e3091/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/alunos/Área de Trabalho/pasta sem título/MeuFut-LP2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/home/alunos/Área de Trabalho/pasta sem título/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7843509d32256d0dff823a82361553813d6f5000/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/alunos/Área de Trabalho/pasta sem título/MeuFut-LP2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="73102109f81500b09964ae8b83174b4c404b2d64">
-        <dex dex="/home/alunos/Área de Trabalho/pasta sem título/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c0b9f67d0960030c772f7143d219c27f6a1e3091/classes.dex" />
     </item>
 
 </items>
