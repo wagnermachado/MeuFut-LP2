@@ -61,7 +61,7 @@ public class DivisaoTimes extends AppCompatActivity {
         EditText nome1 = (EditText) findViewById(R.id.txtNome);
         String nome = nome1.getText().toString();
 
-        if (nome != " ")
+        if (nome != "")
             lista.add(new Pessoa(nome));
 
         nome1.setText("");

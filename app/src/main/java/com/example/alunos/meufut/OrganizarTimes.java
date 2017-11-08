@@ -75,7 +75,7 @@ public class OrganizarTimes extends AppCompatActivity {
                 boolean numjog = true;
                 Pessoa pessoa;
                 int jogadores = Integer.parseInt(numero);
-                if ((jogadores < 4) || (jogadores > 11)) {
+                if ((jogadores < 8) || (jogadores > 22)) {
                     numjog = false;
                 }
 

@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="2652205169a52c42511a31caed4dcc070cb74ec3">
+        sha1="aebb0bf4ec184927322157aeb49e4a8b5beef80b">
         <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3acfc06efc5881d7cb6e4bbc42b1d62baa436da7/classes.dex" />
     </item>
     <item

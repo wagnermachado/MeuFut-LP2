@@ -1,5 +1,6 @@
 package com.example.alunos.meufut;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 
-;
+;import java.util.ArrayList;
+
 /**
  * Created by alunos on 21/09/17.
  */
@@ -23,6 +25,8 @@ public class Cronometro extends AppCompatActivity{
     Button cancela2;
     Button pla1;
     Button pla2;
+    Button fim;
+    Intent it;
 
     int gols1;
     int gols2;
@@ -32,6 +36,12 @@ public class Cronometro extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
+
+        final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
+        final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
+
+        it = new Intent(this, FimDeJogo.class);
+
 
         gols1 = 0;
         gols2 = 0;
@@ -47,7 +57,7 @@ public class Cronometro extends AppCompatActivity{
         cancela2 = (Button) findViewById(R.id.btnCancela2);
         pla1 = (Button) findViewById(R.id.plaTime1);
         pla2 = (Button) findViewById(R.id.plaTime2);
-
+        fim = (Button) findViewById(R.id.btnFim);
 
         relogio.setBase(SystemClock.elapsedRealtime());
 
@@ -97,6 +107,17 @@ public class Cronometro extends AppCompatActivity{
                     gols2 -= 1;
                     pla2.setText(String.valueOf(gols2));
                 }
+            }
+        });
+
+        fim.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                it.putParcelableArrayListExtra("time1", time1);
+                it.putParcelableArrayListExtra("time2", time2);
+                it.putExtra("gols1", gols1);
+                it.putExtra("gols2", gols2);
+                startActivity(it);
+
             }
         });
 

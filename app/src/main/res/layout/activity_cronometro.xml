@@ -8,177 +8,193 @@
     android:layout_height="fill_parent"
         android:weightSum="1">>
 
-    <Chronometer
-        android:id="@+id/relogio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/darker_gray"
-        android:textSize="40dip" />
-
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_marginTop="10dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_dark"
-        android:text="INICIAR" />
-
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/holo_orange_light"
-        android:text="PARAR" />
-
-    <Button
-        android:id="@+id/btnBlank"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/holo_red_dark"
-        android:text="Zerar" />
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="147dp">
-
-        <Button
-            android:id="@+id/plaTime2"
-            android:layout_width="202dp"
-            android:layout_height="150dp"
-            android:layout_column="1"
-            android:layout_row="0"
-            android:background="@android:drawable/editbox_dropdown_light_frame"
-            android:text="0"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <Button
-            android:id="@+id/plaTime1"
-            android:layout_width="207dp"
-            android:layout_height="150dp"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:background="@android:drawable/editbox_dropdown_light_frame"
-            android:text="0"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    </GridLayout>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/txtTime1"
+        <HorizontalScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Time 1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtTime2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="28"
-            android:layout_row="0"
-            android:text="Time 2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-    </GridLayout>
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnCancela2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:layout_marginRight="8dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintLeft_toRightOf="@+id/btnGol2"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+                    <Chronometer
+                        android:id="@+id/relogio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/darker_gray"
+                        android:textSize="40dip" />
 
-        <Button
-            android:id="@+id/btnGol2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="227dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginStart="227dp" />
+                    <Button
+                        android:id="@+id/btnStart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:text="INICIAR" />
 
-        <Button
-            android:id="@+id/btnCancela1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:layout_marginRight="35dp"
-            app:layout_constraintRight_toLeftOf="@+id/btnGol2"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintHorizontal_bias="0.916"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="35dp" />
+                    <Button
+                        android:id="@+id/btnStop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_light"
+                        android:text="PARAR" />
 
-        <Button
-            android:id="@+id/btnGol1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/btnCancela1"
-            android:layout_marginRight="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+                    <Button
+                        android:id="@+id/btnBlank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_red_dark"
+                        android:text="Zerar" />
 
-        <Button
-            android:id="@+id/btnFim"
-            android:layout_width="416dp"
-            android:layout_height="58dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@android:drawable/alert_light_frame"
-            android:text="FIM DE JOGO"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.523"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.496"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" />
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-    </android.support.constraint.ConstraintLayout>
+                        <Button
+                            android:id="@+id/plaTime2"
+                            android:layout_width="202dp"
+                            android:layout_height="150dp"
+                            android:layout_column="1"
+                            android:layout_row="0"
+                            android:background="@android:drawable/editbox_dropdown_light_frame"
+                            android:text="0"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-</LinearLayout>
+                        <Button
+                            android:id="@+id/plaTime1"
+                            android:layout_width="207dp"
+                            android:layout_height="150dp"
+                            android:layout_column="0"
+                            android:layout_row="0"
+                            android:background="@android:drawable/editbox_dropdown_light_frame"
+                            android:text="0"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                    </GridLayout>
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/txtTime1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Time 1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                        <TextView
+                            android:id="@+id/txtTime2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="28"
+                            android:layout_row="0"
+                            android:text="Time 2"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    </GridLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="209dp">
+
+                        <Button
+                            android:id="@+id/btnCancela2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="-"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.935"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:layout_constraintLeft_toLeftOf="parent" />
+
+                        <Button
+                            android:id="@+id/btnGol2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="212dp"
+                            android:layout_marginStart="227dp"
+                            android:layout_marginTop="8dp"
+                            android:text="+"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <Button
+                            android:id="@+id/btnCancela1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="35dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="-"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.916"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/btnGol2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <Button
+                            android:id="@+id/btnGol1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="+"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/btnCancela1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <Button
+                            android:id="@+id/btnFim"
+                            android:layout_width="416dp"
+                            android:layout_height="58dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@android:drawable/alert_light_frame"
+                            android:text="FIM DE JOGO"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.523"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.496" />
+
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+            </ScrollView>
+        </HorizontalScrollView>
+
+    </LinearLayout>
 
