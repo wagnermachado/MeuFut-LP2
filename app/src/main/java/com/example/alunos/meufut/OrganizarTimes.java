@@ -75,7 +75,7 @@ public class OrganizarTimes extends AppCompatActivity {
                 boolean numjog = true;
                 Pessoa pessoa;
                 int jogadores = Integer.parseInt(numero);
-                if ((jogadores < 8) || (jogadores > 22)) {
+                if ((jogadores < 4) || (jogadores > 11)) {
                     numjog = false;
                 }
 
@@ -133,7 +133,7 @@ public class OrganizarTimes extends AppCompatActivity {
                             time1List = pessoa.getNome();
                         } else {
                             pessoa = time1.get(i);
-                            time1List = time1List + " " + pessoa.getNome();
+                            time1List = time1List + ", " + pessoa.getNome();
                         }
                     }
 
@@ -143,7 +143,7 @@ public class OrganizarTimes extends AppCompatActivity {
                             time2List = pessoa.getNome();
                         } else {
                             pessoa = time2.get(i);
-                            time2List = time2List + " " + pessoa.getNome();
+                            time2List = time2List + ", " + pessoa.getNome();
                         }
                     }
 
@@ -153,7 +153,7 @@ public class OrganizarTimes extends AppCompatActivity {
                             foraList = pessoa.getNome();
                         } else {
                             pessoa = fora.get(i);
-                            foraList = foraList + " " + pessoa.getNome();
+                            foraList = foraList + ", " + pessoa.getNome();
                         }
                     }
                     home.setText("Time 1: " + time1List);
