@@ -22,6 +22,7 @@
         <activity android:name=".OrganizarTimes"></activity>
         <activity android:name=".NavegadorInternet"></activity>
         <activity android:name=".FimDeJogo"></activity>
+        <activity android:name=".ConsultaActivity"></activity>
     </application>
 
 </manifest>

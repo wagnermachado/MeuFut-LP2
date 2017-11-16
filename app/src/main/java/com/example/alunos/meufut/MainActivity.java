@@ -34,5 +34,11 @@ public class MainActivity extends AppCompatActivity {
         Intent it = new Intent(this, NavegadorInternet.class);
         startActivity(it);
     }
+
+    public void historico(View v) {
+        Intent it = new Intent(this, ConsultaActivity.class);
+        startActivity(it);
+    }
+
 }
 

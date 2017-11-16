@@ -2,6 +2,7 @@ package com.example.alunos.meufut;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 
@@ -51,5 +52,17 @@ public class BancoController {
             return "Erro no registro!";
         }
 
+    }
+
+    public Cursor carregaDados() {
+        Cursor cursor;
+        String[] campos = {banco.IDPARTIDA, banco.PLACARTIME1, banco.PLACARTIME2, banco.DATA};
+        db = banco.getReadableDatabase();
+        cursor = db.query(banco.TABELA_PARTIDA, campos, null, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
     }
 }
