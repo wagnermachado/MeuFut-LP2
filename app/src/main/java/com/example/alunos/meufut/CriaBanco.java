@@ -15,6 +15,9 @@ public class CriaBanco extends SQLiteOpenHelper {
     private static final String IDPARTIDA = "_idPARTIDA";
     public static final String PLACARTIME1 = "placarTime1";
     public static final String PLACARTIME2 = "placarTime2";
+    public static final String TIME1 = "time1";
+    public static final String TIME2 = "time2";
+
     public static final String DATA = "data";
     private static final int VERSAO = 1;
 
@@ -24,7 +27,9 @@ public class CriaBanco extends SQLiteOpenHelper {
                         + IDPARTIDA + " integer primary key autoincrement, "
                         + PLACARTIME1 + " integer, "
                         + PLACARTIME2 + " integer, "
-                        + DATA + " date)";
+                        + TIME1 + " text, "
+                        + TIME2 + " text, "
+                        + DATA + " text)";
         sqLiteDatabase.execSQL(sql);
     }
 

@@ -59,7 +59,7 @@ public class Cronometro extends AppCompatActivity{
         pla2 = (Button) findViewById(R.id.plaTime2);
         fim = (Button) findViewById(R.id.btnFim);
 
-        relogio.setBase(SystemClock.elapsedRealtime());
+        relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
 
 
         iniciar.setOnClickListener(new Button.OnClickListener() {

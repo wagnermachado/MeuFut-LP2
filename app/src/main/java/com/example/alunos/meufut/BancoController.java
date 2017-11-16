@@ -23,24 +23,24 @@ public class BancoController {
         banco = new CriaBanco(context);
     }
 
-    public String insereDado(int gols1, int gols2) {
+    public String insereDado(int gols1, int gols2, String time1List, String time2List) {
         ContentValues valores;
         long resultado;
 
         Calendar cal = Calendar.getInstance();
         int dia = cal.get(Calendar.DAY_OF_MONTH);
         int mes = cal.get(Calendar.MONTH);
+        mes++;
         int ano = cal.get(Calendar.YEAR);
-        int hora = cal.get(Calendar.HOUR_OF_DAY);
-        int minuto = cal.get(Calendar.MINUTE);
-        int segundo = cal.get(Calendar.SECOND);
 
-        //Date data = cal.set(ano + 1900, mes, dia, hora, minuto, segundo);
+        String data = dia + "/" + mes + "/" + ano;
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
         valores.put(CriaBanco.PLACARTIME1, gols1);
         valores.put(CriaBanco.PLACARTIME2, gols2);
+        valores.put(CriaBanco.TIME1, time1List);
+        valores.put(CriaBanco.TIME2, time2List);
         valores.put(CriaBanco.DATA, data);
         resultado = db.insert(CriaBanco.TABELA_PARTIDA, null, valores);
         db.close();
@@ -48,7 +48,7 @@ public class BancoController {
         if (resultado == -1) {
             return "Registrado com sucesso!";
         } else {
-            return gols1 + "," + gols2 + "," + data;
+            return "Erro no registro!";
         }
 
     }
