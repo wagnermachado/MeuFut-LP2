@@ -47,16 +47,16 @@ public class BancoController {
         db.close();
 
         if (resultado == -1) {
-            return "Registrado com sucesso!";
-        } else {
             return "Erro no registro!";
+        } else {
+            return "Registrado com sucesso!";
         }
 
     }
 
     public Cursor carregaDados() {
         Cursor cursor;
-        String[] campos = {banco.IDPARTIDA, banco.PLACARTIME1, banco.PLACARTIME2, banco.DATA};
+        String[] campos = {banco._IDPARTIDA, banco.PLACARTIME1, banco.PLACARTIME2, banco.DATA};
         db = banco.getReadableDatabase();
         cursor = db.query(banco.TABELA_PARTIDA, campos, null, null, null, null, null, null);
         if (cursor != null) {

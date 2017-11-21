@@ -12,9 +12,9 @@ public class CriaBanco extends SQLiteOpenHelper {
 
     private static final String NOME_BANCO = "fut.db";
     public static final String TABELA_PARTIDA = "PARTIDA";
-    public static final String IDPARTIDA = "_idPARTIDA";
-    public static final String PLACARTIME1 = "placarTime1";
-    public static final String PLACARTIME2 = "placarTime2";
+    public static final String _IDPARTIDA = "_id";
+    public static final String PLACARTIME1 = "placartime1";
+    public static final String PLACARTIME2 = "placartime2";
     public static final String TIME1 = "time1";
     public static final String TIME2 = "time2";
 
@@ -23,13 +23,13 @@ public class CriaBanco extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sql = "CREATE TABLE " + TABELA_PARTIDA + "(" 
-                        + IDPARTIDA + " integer primary key autoincrement, "
+        String sql = "CREATE TABLE " + TABELA_PARTIDA + " ( "
+                        + _IDPARTIDA + " integer primary key autoincrement, "
                         + PLACARTIME1 + " integer, "
                         + PLACARTIME2 + " integer, "
                         + TIME1 + " text, "
                         + TIME2 + " text, "
-                        + DATA + " text)";
+                        + DATA + " text ) ";
         sqLiteDatabase.execSQL(sql);
     }
 

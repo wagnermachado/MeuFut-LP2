@@ -3,24 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="/home/alunos/.android/build-cache/011eda9b0bc8eb5789f342c171b9b34ef796a3a1/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5da0d05e1b137dbe06db415c97e48469b7627dac/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/alunos/.android/build-cache/83cd004c57e5d80190c806da080d4ecbb49ed07b/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_544a7e54d237b34cf6221ff0ac32c0b3673ecfe5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/alunos/.android/build-cache/4094661c86f9af075e627e0361eba7c328d966df/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -30,48 +12,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/www/MeuFut-LP2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="5db887a183d9de7095adb9e91e281ce9adc8e2b4">
-        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3acfc06efc5881d7cb6e4bbc42b1d62baa436da7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/alunos/.android/build-cache/3a6c1b524f7a571dc30f9790eda4700cc7b39169/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_21f4ae18164a086e59f24a1ecd9c37432ee387df/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/alunos/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_35f6f7cd60daf8b36c21068f2611399b58c90c29/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/www/MeuFut-LP2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5ce2436add697eba1e097d26ae3f066c771c1696/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/alunos/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
         <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_648afd0593c463e308e31542871e21dc8751959e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/alunos/.android/build-cache/8d4a1e05823a5fcfd3dc38b40deb88508663bacd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_79ae5cf10778b7e7e0d564ab10dbc37f8c478e99/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -126,6 +81,51 @@
         revision="26.0.0"
         sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
         <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ee6a1b2e4cf8b7b29b2d641cb664401a9d8de383/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/alunos/.android/build-cache/011eda9b0bc8eb5789f342c171b9b34ef796a3a1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5da0d05e1b137dbe06db415c97e48469b7627dac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/alunos/.android/build-cache/83cd004c57e5d80190c806da080d4ecbb49ed07b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_544a7e54d237b34cf6221ff0ac32c0b3673ecfe5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/www/MeuFut-LP2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="85440529dbc442e1eae8620c0accf623a0bd9215">
+        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3acfc06efc5881d7cb6e4bbc42b1d62baa436da7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/alunos/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_35f6f7cd60daf8b36c21068f2611399b58c90c29/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/www/MeuFut-LP2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/www/MeuFut-LP2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5ce2436add697eba1e097d26ae3f066c771c1696/classes.dex" />
     </item>
 
 </items>

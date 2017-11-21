@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 /**
@@ -18,15 +20,22 @@ public class ConsultaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_consulta);
 
         BancoController crud = new BancoController(getBaseContext());
-        Cursor cursor = crud.carregaDados();
+        final Cursor cursor = crud.carregaDados();
 
-        String placar = CriaBanco.PLACARTIME1 + "-" + CriaBanco.PLACARTIME2;
-        String [] nomeCampos = new String [] {CriaBanco.IDPARTIDA, placar, CriaBanco.DATA};
+
+        String [] nomeCampos = new String [] {CriaBanco.PLACARTIME1, CriaBanco.PLACARTIME2, CriaBanco.DATA};
         int [] idViews = new int[] {R.id.placar, R.id.data};
 
-        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(), R.layout.row_layout
-                                                                , cursor, nomeCampos, idViews, 0);
-        ListView lista = (ListView) findViewById(R.id.ListView);
+
+        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(), R.layout.row_layout, cursor, nomeCampos, idViews, 0);
+        ListView lista = (ListView) findViewById(R.id.listView);
         lista.setAdapter(adaptador);
+        /*lista.setOnItemClickListener(new AdapterView.OnClickListener() {
+            @Override
+            public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
+
+            }
+
+        });*/
     }
 }

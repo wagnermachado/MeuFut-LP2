@@ -31,6 +31,8 @@ public class Cronometro extends AppCompatActivity{
     int gols1;
     int gols2;
 
+    boolean crono;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,6 +44,7 @@ public class Cronometro extends AppCompatActivity{
 
         it = new Intent(this, FimDeJogo.class);
 
+        crono = false;
 
         gols1 = 0;
         gols2 = 0;
@@ -63,18 +66,26 @@ public class Cronometro extends AppCompatActivity{
 
 
         iniciar.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {   relogio.start();relogio.setBase(relogio.getBase() + SystemClock.elapsedRealtime() - lastPause);
-
+            public void onClick(View v) {
+                if (!crono) {
+                    relogio.start();
+                    relogio.setBase(relogio.getBase() + SystemClock.elapsedRealtime() - lastPause);
+                    crono = true;
                 }
+            }
         });
 
         parar.setOnClickListener(new Button.OnClickListener() {
-           public void onClick(View v) {  lastPause = SystemClock.elapsedRealtime();
-               relogio.stop();  }
+           public void onClick(View v) {
+               lastPause = SystemClock.elapsedRealtime();
+               relogio.stop();
+                crono = false;
+           }
         });
 
         zerar.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) { relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
+                crono = false;
             }
         });
 
