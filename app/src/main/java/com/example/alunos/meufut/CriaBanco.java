@@ -14,6 +14,9 @@ public class CriaBanco extends SQLiteOpenHelper {
     public static final String TABELA_PARTIDA = "PARTIDA";
     public static final String _IDPARTIDA = "_id";
     public static final String PLACAR = "placar";
+    public static final String NOMETIME1 = "nometime1";
+    public static final String NOMETIME2 = "nometime2";
+
     public static final String TIME1 = "time1";
     public static final String TIME2 = "time2";
 
@@ -25,6 +28,8 @@ public class CriaBanco extends SQLiteOpenHelper {
         String sql = "CREATE TABLE " + TABELA_PARTIDA + " ( "
                         + _IDPARTIDA + " integer primary key autoincrement, "
                         + PLACAR + " text, "
+                        + NOMETIME1 + " text, "
+                        + NOMETIME2 + " text, "
                         + TIME1 + " text, "
                         + TIME2 + " text, "
                         + DATA + " text ) ";

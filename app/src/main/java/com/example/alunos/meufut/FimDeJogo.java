@@ -22,6 +22,8 @@ public class FimDeJogo extends AppCompatActivity {
     TextView time1T, time2T;
     String time1List;
     String time2List;
+    String nome1;
+    String nome2;
     Pessoa pessoa;
 
     @Override
@@ -44,6 +46,9 @@ public class FimDeJogo extends AppCompatActivity {
 
         gols1B.setText(String.valueOf(gol1));
         gols2B.setText(String.valueOf(gol2));
+
+        nome1 = getIntent().getStringExtra("nome1");
+        nome2 = getIntent().getStringExtra("nome2");
 
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
@@ -70,9 +75,12 @@ public class FimDeJogo extends AppCompatActivity {
                 }
             }
 
-            time1T.setText("Time 1: " + time1List);
-            time2T.setText("Time 2: " + time2List);
+            time1T.setText(nome1 + ": " + time1List);
+            time2T.setText(nome2 + ": " + time2List);
 
+        } else {
+            time1T.setText(nome1);
+            time2T.setText(nome2);
         }
 
         sim.setOnClickListener(new Button.OnClickListener() {

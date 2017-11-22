@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.EditText;
 
 ;import java.util.ArrayList;
 
@@ -27,6 +28,7 @@ public class Cronometro extends AppCompatActivity{
     Button pla2;
     Button fim;
     Intent it;
+    EditText nomeTime1, nomeTime2;
 
     int gols1;
     int gols2;
@@ -61,6 +63,10 @@ public class Cronometro extends AppCompatActivity{
         pla1 = (Button) findViewById(R.id.plaTime1);
         pla2 = (Button) findViewById(R.id.plaTime2);
         fim = (Button) findViewById(R.id.btnFim);
+        nomeTime1 = (EditText) findViewById(R.id.insTime1);
+        nomeTime2 = (EditText) findViewById(R.id.insTime2);
+        nomeTime1.setText("Time 1");
+        nomeTime2.setText("Time 2");
 
         relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
 
@@ -125,8 +131,10 @@ public class Cronometro extends AppCompatActivity{
 
         fim.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                it.putParcelableArrayListExtra("time1", time1);
-                it.putParcelableArrayListExtra("time2", time2);
+                it.putExtra("nome1", nomeTime1.getText().toString());
+                it.putExtra("nome2", nomeTime2.getText().toString());
+                it.putExtra("time1", time1);
+                it.putExtra("time2", time2);
                 it.putExtra("gols1", gols1);
                 it.putExtra("gols2", gols2);
                 startActivity(it);
