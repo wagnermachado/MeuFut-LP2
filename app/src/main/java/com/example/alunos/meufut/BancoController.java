@@ -36,10 +36,11 @@ public class BancoController {
 
         String data = dia + "/" + mes + "/" + ano;
 
+        String placar = String.valueOf(gols1) + "-" + String.valueOf(gols2);
+
         db = banco.getWritableDatabase();
         valores = new ContentValues();
-        valores.put(CriaBanco.PLACARTIME1, gols1);
-        valores.put(CriaBanco.PLACARTIME2, gols2);
+        valores.put(CriaBanco.PLACAR, placar);
         valores.put(CriaBanco.TIME1, time1List);
         valores.put(CriaBanco.TIME2, time2List);
         valores.put(CriaBanco.DATA, data);
@@ -56,7 +57,7 @@ public class BancoController {
 
     public Cursor carregaDados() {
         Cursor cursor;
-        String[] campos = {banco._IDPARTIDA, banco.PLACARTIME1, banco.PLACARTIME2, banco.DATA};
+        String[] campos = {banco._IDPARTIDA, banco.PLACAR, banco.TIME1, banco.TIME2, banco.DATA};
         db = banco.getReadableDatabase();
         cursor = db.query(banco.TABELA_PARTIDA, campos, null, null, null, null, null, null);
         if (cursor != null) {

@@ -83,8 +83,8 @@ public class Cronometro extends AppCompatActivity{
                     crono = false;
                 }
             }
-        });  
-        
+        });
+
         zerar.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) { relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
                 crono = false;
