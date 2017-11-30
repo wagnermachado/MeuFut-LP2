@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fundopagina"
+    >
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Digite sua cidade:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:text="Digite a localização :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold|italic" />
 
     <EditText
         android:id="@+id/edtCidade"
@@ -19,7 +22,11 @@
 
     <Button
         android:id="@+id/btNavegar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PROCURAR" />
+        android:background="@drawable/botaoteste"
+        android:text="Procurar"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
 </LinearLayout>

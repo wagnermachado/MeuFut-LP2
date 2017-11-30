@@ -4,15 +4,21 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+
 
 import java.util.ArrayList;
 
+import static com.example.alunos.meufut.R.id.imageView;
+
 public class NormalActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal);
+
 
     }
     public void cronometro(View v) {

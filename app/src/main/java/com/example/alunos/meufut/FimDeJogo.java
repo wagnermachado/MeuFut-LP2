@@ -88,7 +88,7 @@ public class FimDeJogo extends AppCompatActivity {
                 BancoController crud = new BancoController(getBaseContext());
                 String resultado;
 
-                resultado = crud.insereDado(gol1, gol2, time1List, time2List);
+                resultado = crud.insereDado(gol1, gol2, time1List, time2List, nome1, nome2);
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
                 startActivity(it);
@@ -104,3 +104,4 @@ public class FimDeJogo extends AppCompatActivity {
 
 
 }
+

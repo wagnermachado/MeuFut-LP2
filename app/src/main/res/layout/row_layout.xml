@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:columnCount="2" android:rowCount="2">
+    android:columnCount="2" android:rowCount="2"
+    android:background="@drawable/fundopagina"
+
+    >
 
     <TextView
         android:id="@+id/placar"
         android:layout_width="wrap_content"
-        android:layout_gravity="fill_horizontal"
         android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:text="PLACAR"
-        />
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/data"
@@ -20,7 +26,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:text="DATA"
-        />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
 </GridLayout>

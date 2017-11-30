@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/fundopagina"
+    >
 
     <TextView
         android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Jogadores por Time: (4-11)"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         android:layout_alignParentTop="true"
-        android:text="Jogadores por Time: (4-11)" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/numJogadores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txt1"
+        android:layout_marginTop="26dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/txt1"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/txtErro"
@@ -33,17 +40,27 @@
         android:id="@+id/btnOrganizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:background="@drawable/botaoteste"
+        android:text="Sortear"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         android:layout_below="@+id/txtErro"
-        android:text="Organizar" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtErro"
-        android:text="Voltar" />
+        android:background="@drawable/botaoteste"
+        android:text="Voltar"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_alignBaseline="@+id/btnOrganizar"
+        android:layout_alignBottom="@+id/btnOrganizar"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/btnOrganizar" />
 
     <TextView
         android:id="@+id/txtTime1"
@@ -52,7 +69,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btnVoltar"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtTime2"
@@ -61,7 +81,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtTime1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtFora"
@@ -69,15 +92,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtTime2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:layout_marginTop="26dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnComecar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtFora"
-        android:text="COMEÇAR O JOGO" />
+        android:background="@drawable/botaoteste"
+        android:text="COMEÇAR O JOGO"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_marginBottom="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

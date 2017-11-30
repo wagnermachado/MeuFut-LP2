@@ -1,55 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/fundopagina"
+    >
 
     <TextView
-        android:id="@+id/txt1"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_alignParentStart="true"
+        android:text="  Digite os nomes dos jogadores :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold|italic"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="43dp"
-        android:text="Nomes: " />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp" />
 
     <EditText
         android:id="@+id/txtNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:layout_toEndOf="@+id/txt1"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" />
 
     <Button
         android:id="@+id/btnCadastrar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btnContinuar"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/txtNome"
-        android:layout_marginTop="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp"
+        android:background="@drawable/botaoteste"
         android:onClick="cadastrar"
-        android:text="Cadastrar" />
+        android:text="Cadastrar jogador"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
 
     <Button
         android:id="@+id/btnContinuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnCadastrar"
-        android:layout_marginTop="36dp"
-        android:text="Confirmar" />
+        android:layout_marginBottom="184dp"
+        android:background="@drawable/botaoteste"
+        android:text="Confirmar Equipes"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/txtLista"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnContinuar"
-        android:layout_marginTop="17dp" />
+        android:layout_marginBottom="82dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
 </RelativeLayout>
