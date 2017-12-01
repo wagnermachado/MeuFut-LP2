@@ -49,7 +49,7 @@ public class DivisaoTimes extends AppCompatActivity {
                 list = pessoa.getNome();
             } else {
                 pessoa = lista.get(i);
-                list = list + " " + pessoa.getNome();
+                list = list + ", " + pessoa.getNome();
             }
         }
 

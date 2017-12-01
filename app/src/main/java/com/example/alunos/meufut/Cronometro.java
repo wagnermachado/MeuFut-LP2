@@ -1,15 +1,30 @@
 package com.example.alunos.meufut;
 
+import android.app.AlertDialog;
+import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
-;import java.util.ArrayList;
+;import java.security.AccessController;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by alunos on 21/09/17.
@@ -29,11 +44,13 @@ public class Cronometro extends AppCompatActivity{
     Button fim;
     Intent it;
     EditText nomeTime1, nomeTime2;
+    String textoM, textoS;
 
     int gols1;
     int gols2;
+    long minutos;
 
-    boolean crono;
+    boolean crono, contagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +64,7 @@ public class Cronometro extends AppCompatActivity{
         it = new Intent(this, FimDeJogo.class);
 
         crono = false;
+        contagem = true;
 
         gols1 = 0;
         gols2 = 0;
@@ -70,6 +88,36 @@ public class Cronometro extends AppCompatActivity{
 
         relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(Cronometro.this);
+        builder.setTitle("Ajuste a contagem regressiva!");
+
+        final EditText inputM = new EditText(Cronometro.this);
+        inputM.setHint("Minutos...");
+
+        inputM.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_CLASS_NUMBER);
+        builder.setView(inputM);
+
+        builder.setPositiveButton("Configurar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                textoM = inputM.getText().toString();
+                if (textoM != "") {
+                    minutos = Integer.parseInt(textoM);
+                    contagem = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Nenhum valor inserido.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        builder.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
+
 
         iniciar.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -77,6 +125,27 @@ public class Cronometro extends AppCompatActivity{
                     relogio.start();
                     relogio.setBase(relogio.getBase() + SystemClock.elapsedRealtime() - lastPause);
                     crono = true;
+
+                    if (contagem) {
+                        new CountDownTimer(minutos * 60000, minutos * 60000 / 2) {
+
+                            public void onTick(long millisUntilFinished) {
+                            }
+
+                            public void onFinish() {
+                                Toast.makeText(getApplicationContext(), "Fim do jogo!", Toast.LENGTH_LONG).show();
+                                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+                                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                                r.play();
+                                lastPause = SystemClock.elapsedRealtime();
+                                relogio.stop();
+                                crono = false;
+                                contagem = false;
+                            }
+                        }.start();
+
+                    }
+
                 }
             }
         });
@@ -142,10 +211,6 @@ public class Cronometro extends AppCompatActivity{
             }
         });
 
-
-
-
     }
-
 
 }
