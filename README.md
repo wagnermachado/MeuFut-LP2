@@ -8,3 +8,5 @@
 **v1.1**
 
 - Possibilita contagem regressiva para cronômetro
+- Retorna para tela de sorteio após fim do jogo
+- Pequenos ajustes que dispensam comentários

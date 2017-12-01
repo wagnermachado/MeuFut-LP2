@@ -13,6 +13,7 @@ import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
@@ -44,7 +45,7 @@ public class Cronometro extends AppCompatActivity{
     Button fim;
     Intent it;
     EditText nomeTime1, nomeTime2;
-    String textoM, textoS;
+    String textoM;
 
     int gols1;
     int gols2;
@@ -60,6 +61,7 @@ public class Cronometro extends AppCompatActivity{
 
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
+        final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
 
         it = new Intent(this, FimDeJogo.class);
 
@@ -94,18 +96,18 @@ public class Cronometro extends AppCompatActivity{
         final EditText inputM = new EditText(Cronometro.this);
         inputM.setHint("Minutos...");
 
-        inputM.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_CLASS_NUMBER);
+        inputM.setInputType(InputType.TYPE_CLASS_NUMBER);
         builder.setView(inputM);
 
         builder.setPositiveButton("Configurar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 textoM = inputM.getText().toString();
-                if (textoM != "") {
+                if (TextUtils.isEmpty(textoM)) {
+                    Toast.makeText(getApplicationContext(), "Nenhum valor inserido.", Toast.LENGTH_LONG).show();
+                } else {
                     minutos = Integer.parseInt(textoM);
                     contagem = true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nenhum valor inserido.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -204,6 +206,7 @@ public class Cronometro extends AppCompatActivity{
                 it.putExtra("nome2", nomeTime2.getText().toString());
                 it.putExtra("time1", time1);
                 it.putExtra("time2", time2);
+                it.putExtra("fora", fora);
                 it.putExtra("gols1", gols1);
                 it.putExtra("gols2", gols2);
                 startActivity(it);

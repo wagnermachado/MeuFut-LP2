@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,12 +49,15 @@ public class OrganizarTimes extends AppCompatActivity {
         home = (TextView) findViewById(R.id.txtTime1);
         away = (TextView) findViewById(R.id.txtTime2);
         out = (TextView) findViewById(R.id.txtFora);
+        numero1.setInputType(InputType.TYPE_CLASS_NUMBER);
+
 
         continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 itC.putParcelableArrayListExtra("time1", time1);
                 itC.putParcelableArrayListExtra("time2", time2);
+                itC.putParcelableArrayListExtra("fora", fora);
                 startActivity(itC);
             }
         });
@@ -70,6 +74,10 @@ public class OrganizarTimes extends AppCompatActivity {
         organizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                time1.clear();
+                time2.clear();
+                fora.clear();
+
                 ArrayList<Pessoa> teste = lista;
                 String numero = numero1.getText().toString();
                 boolean numjog = true;

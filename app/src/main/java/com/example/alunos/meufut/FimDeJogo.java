@@ -1,10 +1,15 @@
 package com.example.alunos.meufut;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +22,7 @@ import java.util.ArrayList;
 public class FimDeJogo extends AppCompatActivity {
 
     int gol1, gol2;
-    Intent it;
+    Intent it, itM;
     Button gols1B, gols2B, sim, nao;
     TextView time1T, time2T;
     String time1List;
@@ -34,7 +39,8 @@ public class FimDeJogo extends AppCompatActivity {
         time1T = (TextView) findViewById(R.id.txtTime1);
         time2T = (TextView) findViewById(R.id.txtTime2);
 
-        it = new Intent(this, MainActivity.class);
+        it = new Intent(this, OrganizarTimes.class);
+        itM = new Intent(this, MainActivity.class);
 
         gols1B = (Button) findViewById(R.id.btnTime1);
         gols2B = (Button) findViewById(R.id.btnTime2);
@@ -52,6 +58,9 @@ public class FimDeJogo extends AppCompatActivity {
 
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
+        final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
+
+        final ArrayList<Pessoa> lista = new ArrayList<>();
 
         if (time1 != null) {
 
@@ -91,13 +100,80 @@ public class FimDeJogo extends AppCompatActivity {
                 resultado = crud.insereDado(gol1, gol2, time1List, time2List, nome1, nome2);
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
-                startActivity(it);
+                if (time1 != null) {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FimDeJogo.this);
+                    builder.setTitle("Deseja manter os mesmos jogadores?");
+
+                    builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            for (int i = 0; i < time1.size(); i++) {
+                                lista.add(time1.get(i));
+                            }
+                            for (int i = 0; i < time2.size(); i++) {
+                                lista.add(time2.get(i));
+                            }
+                            for (int i = 0; i < fora.size(); i++) {
+                                lista.add(fora.get(i));
+                            }
+
+                            it.putParcelableArrayListExtra("lista", lista);
+                            startActivity(it);
+
+                        }
+                    });
+                    builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivity(itM);
+                        }
+                    });
+
+                    builder.show();
+
+                } else {
+                    startActivity(itM);
+                }
             }
         });
 
         nao.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                startActivity(it);
+
+                if (time1 != null) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FimDeJogo.this);
+                    builder.setTitle("Deseja manter os mesmos jogadores?");
+
+                    builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            for (int i = 0; i < time1.size(); i++) {
+                                lista.add(time1.get(i));
+                            }
+                            for (int i = 0; i < time2.size(); i++) {
+                                lista.add(time2.get(i));
+                            }
+                            for (int i = 0; i < fora.size(); i++) {
+                                lista.add(fora.get(i));
+                            }
+
+                            it.putParcelableArrayListExtra("lista", lista);
+                            startActivity(it);
+
+                        }
+                    });
+                    builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivity(itM);
+                        }
+                    });
+
+                    builder.show();
+                } else {
+                    startActivity(itM);
+                }
             }
         });
     }
