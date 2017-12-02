@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.alunos.meufut.Pessoa;
 
 import java.util.ArrayList;
@@ -18,17 +20,21 @@ import java.util.ArrayList;
 public class DivisaoTimes extends AppCompatActivity {
 
     ArrayList<Pessoa> lista = new ArrayList<>();
-    Button confirmar;
+    Button confirmar, remover;
     Intent it;
     Pessoa pessoa;
+    TextView text;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
 
+        remover = (Button) findViewById(R.id.btnRemover);
         confirmar = (Button) findViewById(R.id.btnContinuar);
         it = new Intent(this, OrganizarTimes.class);
+        text = (TextView) findViewById(R.id.txtLista);
 
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,20 +47,22 @@ public class DivisaoTimes extends AppCompatActivity {
     }
 
     public void mostraLista() {
-        String list = null;
+        if (lista.size() != 0) {
+            String list = null;
 
-        for (int i = 0; i < lista.size(); i++) {
-            if (i == 0) {
-                pessoa = lista.get(i);
-                list = pessoa.getNome();
-            } else {
-                pessoa = lista.get(i);
-                list = list + ", " + pessoa.getNome();
+            for (int i = 0; i < lista.size(); i++) {
+                if (i == 0) {
+                    pessoa = lista.get(i);
+                    list = pessoa.getNome();
+                } else {
+                    pessoa = lista.get(i);
+                    list = list + ", " + pessoa.getNome();
+                }
             }
+            text.setText(String.valueOf(list));
+        } else {
+            text.setText("");
         }
-
-        TextView text = (TextView) findViewById(R.id.txtLista);
-        text.setText(String.valueOf(list));
     }
 
     public void cadastrar(View v) {
@@ -65,6 +73,17 @@ public class DivisaoTimes extends AppCompatActivity {
             lista.add(new Pessoa(nome));
 
         nome1.setText("");
+
+        this.mostraLista();
+
+    }
+
+    public void remover(View v) {
+        if (lista.size() != 0) {
+            lista.remove(lista.size() - 1);
+        } else {
+            Toast.makeText(getApplicationContext(), "Não há jogadores cadastrados!", Toast.LENGTH_SHORT).show();
+        }
 
         this.mostraLista();
 
