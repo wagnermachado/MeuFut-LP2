@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class FimDeJogo extends AppCompatActivity {
 
+    EditText nomes1, nomes2;
     int gol1, gol2;
     Intent it, itM;
     Button gols1B, gols2B, sim, nao;
@@ -39,6 +40,9 @@ public class FimDeJogo extends AppCompatActivity {
         time1T = (TextView) findViewById(R.id.txtTime1);
         time2T = (TextView) findViewById(R.id.txtTime2);
 
+        nomes1 = new EditText(FimDeJogo.this);
+        nomes2 = new EditText(FimDeJogo.this);
+
         it = new Intent(this, OrganizarTimes.class);
         itM = new Intent(this, MainActivity.class);
 
@@ -56,6 +60,7 @@ public class FimDeJogo extends AppCompatActivity {
         nome1 = getIntent().getStringExtra("nome1");
         nome2 = getIntent().getStringExtra("nome2");
 
+
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
         final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
@@ -63,7 +68,6 @@ public class FimDeJogo extends AppCompatActivity {
         final ArrayList<Pessoa> lista = new ArrayList<>();
 
         if (time1 != null) {
-
             for (int i = 0; i < time1.size(); i++) {
                 if (i == 0) {
                     pessoa = time1.get(i);
@@ -91,6 +95,68 @@ public class FimDeJogo extends AppCompatActivity {
             time1T.setText(nome1);
             time2T.setText(nome2);
         }
+
+        time1T.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+
+                if (time1List == null) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FimDeJogo.this);
+                    builder.setTitle("Cadastre a equipe " + nome1);
+                    builder.setView(nomes1);
+
+                    builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            time1List = nomes1.getText().toString();
+
+                            if (TextUtils.isEmpty(time1List)) {
+
+                            } else {
+                                time1T.setText(nome1 + ": " + time1List);
+                            }
+                        }
+                    });
+                    builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+                    builder.show();
+                }
+            }
+        });
+
+        time2T.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                if (time2List == null) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FimDeJogo.this);
+                    builder.setTitle("Cadastre a equipe " + nome2);
+                    builder.setView(nomes2);
+
+                    builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            time2List = nomes2.getText().toString();
+
+                            if (TextUtils.isEmpty(time2List)) {
+                            } else {
+                                time2T.setText(nome2 + ": " + time2List);
+                            }
+                        }
+                    });
+                    builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+                    builder.show();
+                }
+            }
+        });
 
         sim.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
