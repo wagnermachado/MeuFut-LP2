@@ -14,3 +14,4 @@
 **v1.2**
 
 - Edição de times sem jogadores
+*(v1.2.1)* - Undo para cadastro de jogadores
