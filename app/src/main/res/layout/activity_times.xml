@@ -66,4 +66,14 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnRemover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtLista"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:onClick="remover"
+        android:text="Remover jogador" />
 </RelativeLayout>
