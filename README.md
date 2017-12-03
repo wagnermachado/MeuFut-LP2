@@ -1,4 +1,4 @@
-# Patch Notes v1.2
+# Patch Notes v1.3
 
 **v1.0**
 
@@ -14,3 +14,8 @@
 **v1.2**
 
 - Edição de times sem jogadores
+- *v1.2.1* Undo para cadastro de jogadores
+
+**v1.3**
+
+- FODENDO função multi-times

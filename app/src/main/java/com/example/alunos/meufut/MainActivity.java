@@ -20,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void multi(View v) {
+        Intent it = new Intent(this, MultiOrganizar.class);
+        startActivity(it);
+    }
+
     public void divisaoTimes(View v) {
         Intent it = new Intent(this, DivisaoTimes.class);
         startActivity(it);

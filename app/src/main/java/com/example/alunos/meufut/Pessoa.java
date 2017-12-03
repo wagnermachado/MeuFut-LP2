@@ -10,9 +10,15 @@ import android.os.Parcelable;
 public class Pessoa implements Parcelable{
 
     private String nome;
+    private int time = 0;
 
     public Pessoa(String nome) {
         this.nome = nome;
+    }
+
+    public Pessoa(String nome, int time) {
+        this.nome = nome;
+        this.time = time;
     }
 
     protected Pessoa(Parcel in) {
