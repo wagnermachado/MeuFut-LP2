@@ -34,14 +34,12 @@
 
     <Button
         android:id="@+id/btnStart"
-        android:layout_width="100dp"
-        android:layout_height="65dp"
+        android:layout_width="110dp"
+        android:layout_height="53dp"
+
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-
         android:layout_marginTop="8dp"
         android:background="@drawable/botaocomecar"
         android:text="Iniciar"
@@ -49,21 +47,18 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/btnBlank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17000002" />
+        app:layout_constraintVertical_bias="0.266" />
 
     <Button
         android:id="@+id/btnStop"
 
-        android:layout_width="100dp"
-        android:layout_height="65dp"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/botaozerar"
@@ -71,40 +66,38 @@
         android:textColor="@android:color/background_light"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btnFim"
-        app:layout_constraintLeft_toRightOf="@+id/btnStart"
-        app:layout_constraintRight_toLeftOf="@+id/btnBlank"
-        app:layout_constraintTop_toTopOf="@+id/relogio"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnCancela1"
         android:layout_width="49dp"
         android:layout_height="45dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="9dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/botaomenos"
         android:text="-"
         android:textColor="@android:color/background_light"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.712" />
 
     <Button
         android:id="@+id/btnBlank"
 
-        android:layout_width="100dp"
-        android:layout_height="65dp"
+        android:layout_width="110dp"
+        android:layout_height="54dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/botaoparar"
         android:text="Zerar"
@@ -112,41 +105,37 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17000002" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <Button
         android:id="@+id/btnGol2"
         android:layout_width="49dp"
         android:layout_height="45dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
 
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="227dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/botaomais2"
         android:text="+"
         android:textColor="@android:color/background_light"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778"
-        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.984"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.79" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/plaTime2"
-        android:layout_width="140dp"
-        android:layout_height="124dp"
+        android:layout_width="111dp"
+        android:layout_height="102dp"
         android:layout_column="1"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_row="0"
@@ -156,22 +145,20 @@
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <Button
         android:id="@+id/plaTime1"
-        android:layout_width="140dp"
-        android:layout_height="124dp"
+        android:layout_width="111dp"
+        android:layout_height="102dp"
         android:layout_column="0"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_row="0"
         android:background="@drawable/quadradopreto"
@@ -180,11 +167,11 @@
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="@+id/plaTime2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <Button
         android:id="@+id/btnGol1"
@@ -200,11 +187,10 @@
         android:textColor="@android:color/background_light"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnFim"
@@ -231,7 +217,7 @@
         android:layout_height="45dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/botaomenos"
         android:text="-"
@@ -239,31 +225,30 @@
         android:textColor="@android:color/background_light"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.737" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <EditText
         android:id="@+id/insTime2"
         android:layout_width="137dp"
         android:layout_height="42dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:shadowColor="@android:color/holo_red_dark"
         android:inputType="textPersonName"
+        android:shadowColor="@android:color/holo_red_dark"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintLeft_toRightOf="@+id/insTime1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339"
-        app:layout_constraintLeft_toRightOf="@+id/insTime1"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <EditText
         android:id="@+id/insTime1"
@@ -277,10 +262,10 @@
         android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.244" />
 
 </android.support.constraint.ConstraintLayout>
