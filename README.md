@@ -14,12 +14,8 @@
 **v1.2**
 
 - Edição de times sem jogadores
-<<<<<<< HEAD
 - *v1.2.1* Undo para cadastro de jogadores
 
 **v1.3**
 
 - FODENDO função multi-times
-=======
-*(v1.2.1)* - Undo para cadastro de jogadores
->>>>>>> 946d22921637c0d9dee42fe8ffc3236a5d470710
