@@ -25,7 +25,7 @@ public class OrganizarTimes extends AppCompatActivity {
     ArrayList<Pessoa> time1 = new ArrayList<>();
     ArrayList<Pessoa> time2 = new ArrayList<>();
     ArrayList<Pessoa> fora = new ArrayList<>();
-    Button voltar;
+
     Button organizar;
     Button continuar;
     Intent it, itC;
@@ -40,7 +40,6 @@ public class OrganizarTimes extends AppCompatActivity {
 
 
         numero1 = (EditText) findViewById(R.id.numJogadores);
-        voltar = (Button) findViewById(R.id.btnVoltar);
         organizar = (Button) findViewById(R.id.btnOrganizar);
         continuar = (Button) findViewById(R.id.btnComecar);
         it = new Intent(this, DivisaoTimes.class);
@@ -61,14 +60,6 @@ public class OrganizarTimes extends AppCompatActivity {
             }
         });
 
-        voltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                it.putParcelableArrayListExtra("lista", lista);
-                startActivity(it);
-            }
-
-        });
 
         organizar.setOnClickListener(new View.OnClickListener() {
             @Override

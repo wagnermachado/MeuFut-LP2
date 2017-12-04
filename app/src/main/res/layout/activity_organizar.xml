@@ -40,27 +40,13 @@
         android:id="@+id/btnOrganizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/txtErro"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/botaoteste"
         android:text="Sortear"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:textStyle="bold|italic"
-        android:layout_below="@+id/txtErro"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/botaoteste"
-        android:text="Voltar"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        android:layout_alignBaseline="@+id/btnOrganizar"
-        android:layout_alignBottom="@+id/btnOrganizar"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/btnOrganizar" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/txtTime1"
