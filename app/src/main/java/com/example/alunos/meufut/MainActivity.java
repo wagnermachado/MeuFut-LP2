@@ -3,11 +3,14 @@ package com.example.alunos.meufut;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -15,6 +18,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     Intent itD, itM;
+    Button a, b, c, d, e;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         itD = new Intent(this, DivisaoTimes.class);
         itM = new Intent(this, MultiOrganizar.class);
+
+        a = (Button) findViewById(R.id.imageButton4);
+        b = (Button) findViewById(R.id.imageButton5);
+        c = (Button) findViewById(R.id.imageButton6);
+        d = (Button) findViewById(R.id.imageButton7);
+        e = (Button) findViewById(R.id.button3);
+
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+        a.setTypeface(typeface);
+        b.setTypeface(typeface);
+        c.setTypeface(typeface);
+        d.setTypeface(typeface);
+        e.setTypeface(typeface);
+
     }
     public void cronometro(View v) {
         Intent it = new Intent(this, Cronometro.class);

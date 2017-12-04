@@ -1,6 +1,7 @@
 package com.example.alunos.meufut;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 public class DivisaoTimes extends AppCompatActivity {
 
     ArrayList<Pessoa> lista = new ArrayList<>();
-    Button confirmar, remover;
+    Button confirmar, remover, cadastrar;
     Intent it;
     Pessoa pessoa;
     TextView text;
@@ -31,10 +32,18 @@ public class DivisaoTimes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
 
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+
+
+        cadastrar = (Button) findViewById(R.id.btnCadastrar);
         remover = (Button) findViewById(R.id.btnRemover);
         confirmar = (Button) findViewById(R.id.btnContinuar);
         it = new Intent(this, OrganizarTimes.class);
         text = (TextView) findViewById(R.id.txtLista);
+
+        cadastrar.setTypeface(typeface);
+        remover.setTypeface(typeface);
+        confirmar.setTypeface(typeface);
 
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,6 +5,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -60,6 +61,8 @@ public class Cronometro extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
 
+        Typeface typefaceDigital7 = Typeface.createFromAsset(getAssets(), "fonts/digital-7.ttf");
+
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
         final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
@@ -89,6 +92,8 @@ public class Cronometro extends AppCompatActivity{
         nomeTime1.setText("Time 1");
         nomeTime2.setText("Time 2");
 
+
+        relogio.setTypeface(typefaceDigital7);
         relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Cronometro.this);
@@ -131,7 +136,7 @@ public class Cronometro extends AppCompatActivity{
                     crono = true;
 
                     if (contagem) {
-                        new CountDownTimer(minutos * 60000, minutos * 60000 / 2) {
+                        new CountDownTimer(minutos * 60000 + 1000, minutos * 60000 / 2) {
 
                             public void onTick(long millisUntilFinished) {
                             }
