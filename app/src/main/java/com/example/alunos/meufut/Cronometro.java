@@ -114,6 +114,7 @@ public class Cronometro extends AppCompatActivity{
         builder.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                contagem = false;
                 dialog.cancel();
             }
         });

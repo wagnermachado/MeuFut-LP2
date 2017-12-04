@@ -27,7 +27,7 @@ public class MultiLista extends AppCompatActivity {
     String nome, elenco, ultima;
     Button iniciar, tela;
     EditText time1, time2;
-    Intent it, itV;
+    Intent it, itV, itC;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
