@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,7 +22,6 @@ import java.util.Random;
 public class OrganizarTimes extends AppCompatActivity {
 
     EditText numero1;
-    TextView erro;
     ArrayList<Pessoa> time1 = new ArrayList<>();
     ArrayList<Pessoa> time2 = new ArrayList<>();
     ArrayList<Pessoa> fora = new ArrayList<>();
@@ -40,7 +40,6 @@ public class OrganizarTimes extends AppCompatActivity {
 
 
         numero1 = (EditText) findViewById(R.id.numJogadores);
-        erro = (TextView) findViewById(R.id.txtErro);
         voltar = (Button) findViewById(R.id.btnVoltar);
         organizar = (Button) findViewById(R.id.btnOrganizar);
         continuar = (Button) findViewById(R.id.btnComecar);
@@ -88,7 +87,6 @@ public class OrganizarTimes extends AppCompatActivity {
                 }
 
                 if (numjog) {
-                    erro.setText("");
                     if (lista.size() / jogadores < 2) {
                         while (teste.size() != 0) {
                             int n = rand.nextInt(teste.size());
@@ -168,7 +166,7 @@ public class OrganizarTimes extends AppCompatActivity {
                     away.setText("Time 2: " + time2List);
                     out.setText("Fora: " + foraList);
                 } else {
-                    erro.setText("O número inserido está inválido!");
+                    Toast.makeText(getApplicationContext(), "O número inserido é inválido!", Toast.LENGTH_SHORT).show();
                 }
             }
 

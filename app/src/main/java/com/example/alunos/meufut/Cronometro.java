@@ -5,6 +5,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -137,9 +138,9 @@ public class Cronometro extends AppCompatActivity{
 
                             public void onFinish() {
                                 Toast.makeText(getApplicationContext(), "Fim do jogo!", Toast.LENGTH_LONG).show();
-                                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-                                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                                r.play();
+                                MediaPlayer ring = MediaPlayer.create(Cronometro.this, R.raw.apito);
+                                ring.start();
+
                                 lastPause = SystemClock.elapsedRealtime();
                                 relogio.stop();
                                 crono = false;
