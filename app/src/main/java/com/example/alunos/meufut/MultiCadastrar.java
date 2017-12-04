@@ -33,7 +33,7 @@ public class MultiCadastrar extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multicadastrar);
+        setContentView(R.layout.activity_times);
 
         final Random rand = new Random();
 
