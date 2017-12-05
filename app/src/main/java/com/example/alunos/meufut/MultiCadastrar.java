@@ -56,7 +56,7 @@ public class MultiCadastrar extends AppCompatActivity {
         continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (lista.size() != totalJogadores) {
+                if (lista.size() < totalJogadores) {
                     Toast.makeText(getApplicationContext(), "Número inválido de jogadores!", Toast.LENGTH_SHORT).show();
                 } else {
                     teste = lista;
@@ -79,6 +79,23 @@ public class MultiCadastrar extends AppCompatActivity {
                             elenco = String.valueOf(elenco);
                             listaT.add(new Time(nome, elenco));
                             elenco = "";
+                        }
+                        if (teste.size() != 0) {
+                            int cont = 0;
+                            while (teste.size() != 0) {
+                                pessoa = teste.get(0);
+                                if (cont == 0) {
+                                    elenco = pessoa.getNome();
+                                }else{
+                                    elenco = elenco + ", " + pessoa.getNome();
+                                }
+
+                                teste.remove(0);
+                                cont++;
+                            }
+                            nome = "Fora";
+                            elenco = String.valueOf(elenco);
+                            listaT.add(new Time(nome, elenco));
                         }
                     } else {
                         r = 0;
@@ -137,7 +154,7 @@ public class MultiCadastrar extends AppCompatActivity {
         EditText nome1 = (EditText) findViewById(R.id.txtNome);
         String nome = nome1.getText().toString();
 
-        if (TextUtils.isEmpty(nome) || lista.size() < totalJogadores)
+        if (!TextUtils.isEmpty(nome))
             lista.add(new Pessoa(nome));
 
         nome1.setText("");

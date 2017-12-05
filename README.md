@@ -19,3 +19,8 @@
 **v1.3**
 
 - FODENDO função multi-times
+
+**v1.4**
+
+- Tela inicial
+- SIS & RIS (views DivisaoTimes, DivisaoDinheiro e Cronometro)

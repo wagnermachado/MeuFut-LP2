@@ -5,6 +5,8 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
@@ -17,7 +19,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
+import android.view.Surface;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
@@ -60,6 +64,14 @@ public class Cronometro extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
+
+        int orient=this.getResources().getConfiguration().orientation;
+
+        if (orient == 1) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        } else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
 
         Typeface typefaceDigital7 = Typeface.createFromAsset(getAssets(), "fonts/digital-7.ttf");
 
@@ -221,6 +233,24 @@ public class Cronometro extends AppCompatActivity{
             }
         });
 
+    }
+
+    public int getDeviceDefaultOrientation() {
+
+        WindowManager windowManager =  (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+
+        Configuration config = getResources().getConfiguration();
+
+        int rotation = windowManager.getDefaultDisplay().getRotation();
+
+        if ( ((rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_180) &&
+                config.orientation == Configuration.ORIENTATION_LANDSCAPE)
+                || ((rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_270) &&
+                config.orientation == Configuration.ORIENTATION_PORTRAIT)) {
+            return Configuration.ORIENTATION_LANDSCAPE;
+        } else {
+            return Configuration.ORIENTATION_PORTRAIT;
+        }
     }
 
 }

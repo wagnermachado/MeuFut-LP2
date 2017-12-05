@@ -28,20 +28,13 @@
         android:layout_below="@+id/txt1"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/txtErro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/numJogadores" />
-
     <Button
         android:id="@+id/btnOrganizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtErro"
+        android:layout_below="@+id/numJogadores"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
         android:background="@drawable/botaoteste"
         android:text="Sortear"
         android:textAllCaps="false"
@@ -50,11 +43,11 @@
 
     <TextView
         android:id="@+id/txtTime1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnVoltar"
+        android:layout_below="@+id/btnOrganizar"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
@@ -78,7 +71,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtTime2"
-        android:layout_marginTop="26dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/background_light"
