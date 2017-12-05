@@ -1,6 +1,7 @@
 package com.example.alunos.meufut;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import java.util.Random;
 
 public class OrganizarTimes extends AppCompatActivity {
 
+
     EditText numero1;
     ArrayList<Pessoa> time1 = new ArrayList<>();
     ArrayList<Pessoa> time2 = new ArrayList<>();
@@ -32,16 +34,21 @@ public class OrganizarTimes extends AppCompatActivity {
     Random rand = new Random();
     TextView home, away, out;
 
+
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
+
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organizar);
         final ArrayList<Pessoa>  lista = getIntent().getParcelableArrayListExtra("lista");
-
-
         numero1 = (EditText) findViewById(R.id.numJogadores);
         organizar = (Button) findViewById(R.id.btnOrganizar);
         continuar = (Button) findViewById(R.id.btnComecar);
+        continuar.setTypeface(typeface);
+        organizar.setTypeface(typeface);
         it = new Intent(this, DivisaoTimes.class);
         itC = new Intent(this, Cronometro.class);
         home = (TextView) findViewById(R.id.txtTime1);

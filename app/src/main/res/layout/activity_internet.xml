@@ -26,9 +26,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/botaoteste"
+        android:fontFamily="@font/montserrat_alternates"
         android:text="Procurar"
         android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold|italic" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

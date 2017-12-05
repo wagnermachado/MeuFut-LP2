@@ -1,6 +1,7 @@
 package com.example.alunos.meufut;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -32,6 +33,7 @@ public class MultiCadastrar extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
 
@@ -47,9 +49,11 @@ public class MultiCadastrar extends AppCompatActivity {
         text = (TextView) findViewById(R.id.txtLista);
 
         cadastrar = (Button) findViewById(R.id.btnCadastrar);
+        cadastrar.setTypeface(typeface);
         continuar = (Button) findViewById(R.id.btnContinuar);
+        continuar.setTypeface(typeface);
         remover = (Button) findViewById(R.id.btnRemover);
-
+        remover.setTypeface(typeface);
         if (sorteio == true)
             continuar.setText("Sortear Equipes");
 
