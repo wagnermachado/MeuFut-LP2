@@ -25,7 +25,7 @@
         android:id="@+id/btNavegar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/botaoteste"
+        android:background="@drawable/btn_selector"
         android:text="Procurar"
         android:textAllCaps="false"
         android:textSize="20sp"

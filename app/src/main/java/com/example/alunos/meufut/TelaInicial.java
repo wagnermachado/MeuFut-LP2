@@ -35,9 +35,7 @@ public class TelaInicial extends AppCompatActivity {
         setContentView(R.layout.activity_inicial);
 
         tempo = 2000;
-        TextView t = (TextView) findViewById(R.id.txtFut);
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
-        t.setTypeface(typeface);
+
 
 
 

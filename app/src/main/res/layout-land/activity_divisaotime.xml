@@ -19,7 +19,7 @@
             android:layout_below="@+id/editValalug"
             android:layout_marginStart="42dp"
             android:layout_marginTop="27dp"
-            android:background="@drawable/botaoteste"
+            android:background="@drawable/btn_selector"
             android:onClick="divd"
             android:text="Calcular"
             android:textAlignment="center"

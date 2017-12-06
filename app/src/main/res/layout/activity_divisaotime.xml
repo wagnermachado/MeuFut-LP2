@@ -18,7 +18,7 @@
             android:layout_below="@+id/textView4"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
-            android:background="@drawable/botaoteste"
+            android:background="@drawable/btn_selector"
             android:onClick="divd"
             android:text="Calcular"
             android:fontFamily="@font/rockwell"
