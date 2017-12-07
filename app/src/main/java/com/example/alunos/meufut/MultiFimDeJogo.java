@@ -62,6 +62,20 @@ public class MultiFimDeJogo extends AppCompatActivity {
         time1T.setText(nome1 + ": " + time1List);
         time2T.setText(nome2 + ": " + time2List);
 
+        time1T.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        time2T.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         gol1 = getIntent().getIntExtra("gols1", 0);
         gol2 = getIntent().getIntExtra("gols2", 0);
 

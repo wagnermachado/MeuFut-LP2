@@ -1,4 +1,4 @@
-# Patch Notes v1.5
+# Patch Notes v1.6
 
 **v1.0**
 
@@ -31,3 +31,8 @@
 - Efeito botão pressionado
 - Imagem na tela de procurar quadras
 - Edit Text atualizado
+
+**v1.6**
+
+- Botões para listagem de jogadores
+- Correção em divisão do dinheiro

@@ -34,7 +34,12 @@ public class MultiLista extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multilista);
 
+        final ArrayList<Pessoa> lista = getIntent().getParcelableArrayListExtra("lista");
+
         listaT = getIntent().getParcelableArrayListExtra("listaT");
+
+        itC = new Intent(this, MultiCadastrar.class);
+        itC.putParcelableArrayListExtra("lista", lista);
 
         iTimes = getIntent().getIntExtra("iTimes", 0);
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,17 +44,23 @@ public class OrganizarTimes extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organizar);
+
         final ArrayList<Pessoa>  lista = getIntent().getParcelableArrayListExtra("lista");
+
         numero1 = (EditText) findViewById(R.id.numJogadores);
+
         organizar = (Button) findViewById(R.id.btnOrganizar);
         continuar = (Button) findViewById(R.id.btnComecar);
         continuar.setTypeface(typeface);
         organizar.setTypeface(typeface);
+
         it = new Intent(this, DivisaoTimes.class);
         itC = new Intent(this, Cronometro.class);
+
         home = (TextView) findViewById(R.id.txtTime1);
         away = (TextView) findViewById(R.id.txtTime2);
         out = (TextView) findViewById(R.id.txtFora);
+
         numero1.setInputType(InputType.TYPE_CLASS_NUMBER);
 
 
@@ -75,12 +82,12 @@ public class OrganizarTimes extends AppCompatActivity {
                 time2.clear();
                 fora.clear();
 
-                ArrayList<Pessoa> teste = lista;
+                ArrayList<Pessoa> teste = getIntent().getParcelableArrayListExtra("lista");
                 String numero = numero1.getText().toString();
                 boolean numjog = true;
                 Pessoa pessoa;
                 int jogadores = Integer.parseInt(numero);
-                if ((jogadores < 4) || (jogadores > 11)) {
+                if (TextUtils.isEmpty(numero) || (jogadores < 4) || (jogadores > 11)) {
                     numjog = false;
                 }
 
@@ -130,7 +137,7 @@ public class OrganizarTimes extends AppCompatActivity {
 
                     String time1List = null;
                     String time2List = null;
-                    String foraList = null;
+                    String foraList = "";
                     for (int i = 0; i < time1.size(); i++) {
                         if (i == 0) {
                             pessoa = time1.get(i);

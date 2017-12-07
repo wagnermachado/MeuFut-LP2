@@ -75,10 +75,11 @@ public class Cronometro extends AppCompatActivity{
 
         Typeface typefaceDigital7 = Typeface.createFromAsset(getAssets(), "fonts/digital-7.ttf");
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+        Typeface typefaceMS = Typeface.createFromAsset(getAssets(), "fonts/montserrat_alternates.ttf");
+
+
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
-        time1.setTypeface(typeface);
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
-        time2.setTypeface(typeface);
         final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
         
         it = new Intent(this, FimDeJogo.class);
@@ -88,11 +89,14 @@ public class Cronometro extends AppCompatActivity{
 
         gols1 = 0;
         gols2 = 0;
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         final Chronometer relogio = (Chronometer) findViewById(R.id.relogio);
         Button iniciar = (Button) findViewById(R.id.btnStart);
         Button zerar = (Button) findViewById (R.id.btnBlank);
         Button parar = (Button) findViewById(R.id.btnStop);
+
+        iniciar.setTypeface(typefaceMS);
+        zerar.setTypeface(typefaceMS);
+        parar.setTypeface(typefaceMS);
 
         gol1 = (Button) findViewById(R.id.btnGol1);
         gol1.setTypeface(typeface);
@@ -120,7 +124,7 @@ public class Cronometro extends AppCompatActivity{
         relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Cronometro.this);
-        builder.setTitle("Ajuste a contagem regressiva!");
+        builder.setTitle("Ajuste o limite de tempo!");
 
         final EditText inputM = new EditText(Cronometro.this);
         inputM.setHint("Minutos...");
@@ -132,7 +136,7 @@ public class Cronometro extends AppCompatActivity{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 textoM = inputM.getText().toString();
-                if (TextUtils.isEmpty(textoM)) {
+                if (TextUtils.isEmpty(textoM) || Integer.parseInt(textoM) == 0) {
                     Toast.makeText(getApplicationContext(), "Nenhum valor inserido.", Toast.LENGTH_LONG).show();
                 } else {
                     minutos = Integer.parseInt(textoM);
@@ -185,16 +189,22 @@ public class Cronometro extends AppCompatActivity{
         parar.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 if (crono) {
-                    lastPause = SystemClock.elapsedRealtime();
-                    relogio.stop();
-                    crono = false;
+                    if (contagem == false) {
+                        lastPause = SystemClock.elapsedRealtime();
+                        relogio.stop();
+                        crono = false;
+                    }
                 }
             }
         });
 
         zerar.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) { relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
+            public void onClick(View v) {
+                if (contagem == false) {
+                relogio.setBase(SystemClock.elapsedRealtime());
+                relogio.stop(); lastPause = SystemClock.elapsedRealtime();
                 crono = false;
+                }
             }
         });
 
@@ -244,24 +254,6 @@ public class Cronometro extends AppCompatActivity{
             }
         });
 
-    }
-
-    public int getDeviceDefaultOrientation() {
-
-        WindowManager windowManager =  (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-
-        Configuration config = getResources().getConfiguration();
-
-        int rotation = windowManager.getDefaultDisplay().getRotation();
-
-        if ( ((rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_180) &&
-                config.orientation == Configuration.ORIENTATION_LANDSCAPE)
-                || ((rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_270) &&
-                config.orientation == Configuration.ORIENTATION_PORTRAIT)) {
-            return Configuration.ORIENTATION_LANDSCAPE;
-        } else {
-            return Configuration.ORIENTATION_PORTRAIT;
-        }
     }
 
 }

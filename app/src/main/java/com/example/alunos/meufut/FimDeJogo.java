@@ -46,7 +46,7 @@ public class FimDeJogo extends AppCompatActivity {
         nomes1.setTypeface(typeface);
         nomes2 = new EditText(FimDeJogo.this);
         nomes2.setTypeface(typeface);
-        it = new Intent(this, OrganizarTimes.class);
+        it = new Intent(this, Cronometro.class);
         itM = new Intent(this, MainActivity.class);
 
         gols1B = (Button) findViewById(R.id.btnTime1);
@@ -59,9 +59,7 @@ public class FimDeJogo extends AppCompatActivity {
         nao.setTypeface(typeface);
 
         gol1 = getIntent().getIntExtra("gols1", 0);
-        gol1.setTypeface(typeface);
         gol2 = getIntent().getIntExtra("gols2", 0);
-        gol2.setTypeface(typeface);
 
         gols1B.setText(String.valueOf(gol1));
         gols1B.setTypeface(typeface);
@@ -69,17 +67,12 @@ public class FimDeJogo extends AppCompatActivity {
         gols2B.setTypeface(typeface);
 
         nome1 = getIntent().getStringExtra("nome1");
-        nome1.setTypeface(typeface);
         nome2 = getIntent().getStringExtra("nome2");
-        nome2.setTypeface(typeface);
 
 
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
-        time1.setTypeface(typeface);
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
-        time2.setTypeface(typeface);
         final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
-        fora.setTypeface(typeface);
 
         final ArrayList<Pessoa> lista = new ArrayList<>();
 
@@ -113,7 +106,7 @@ public class FimDeJogo extends AppCompatActivity {
         }
 
         time1T.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
+            public void onClick(final View v) {
 
                 if (time1List == null) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(FimDeJogo.this);
@@ -135,6 +128,7 @@ public class FimDeJogo extends AppCompatActivity {
                     builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            time1List = "";
                             dialog.cancel();
                         }
                     });
@@ -165,6 +159,7 @@ public class FimDeJogo extends AppCompatActivity {
                     builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            time2List = "";
                             dialog.cancel();
                         }
                     });
@@ -185,7 +180,7 @@ public class FimDeJogo extends AppCompatActivity {
                 if (time1 != null) {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(FimDeJogo.this);
-                    builder.setTitle("Deseja manter os mesmos jogadores?");
+                    builder.setTitle("Deseja voltar para o cronômetro?");
 
                     builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         @Override
@@ -225,7 +220,7 @@ public class FimDeJogo extends AppCompatActivity {
 
                 if (time1 != null) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(FimDeJogo.this);
-                    builder.setTitle("Deseja manter os mesmos jogadores?");
+                    builder.setTitle("Deseja voltar para o cronômetro?");
 
                     builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         @Override
@@ -257,8 +252,7 @@ public class FimDeJogo extends AppCompatActivity {
                     startActivity(itM);
                 }
             }
-        });
-    }
+        });    }
 
 
 }

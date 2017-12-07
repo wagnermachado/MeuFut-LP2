@@ -1,5 +1,7 @@
 package com.example.alunos.meufut;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -27,8 +29,7 @@ public class MultiCadastrar extends AppCompatActivity {
     Pessoa pessoa;
     int iTimes, iJogadores, totalJogadores, r, time;
     boolean sorteio;
-    Button continuar, cadastrar, remover;
-    TextView text;
+    Button continuar, cadastrar, remover, listaB;
     String nome;
 
     @Override
@@ -46,16 +47,50 @@ public class MultiCadastrar extends AppCompatActivity {
 
         totalJogadores = iTimes * iJogadores;
 
-        text = (TextView) findViewById(R.id.txtLista);
-
         cadastrar = (Button) findViewById(R.id.btnCadastrar);
         cadastrar.setTypeface(typeface);
         continuar = (Button) findViewById(R.id.btnContinuar);
         continuar.setTypeface(typeface);
         remover = (Button) findViewById(R.id.btnRemover);
         remover.setTypeface(typeface);
+
+        listaB = (Button) findViewById(R.id.btnLista);
+        listaB.setTypeface(typeface);
+
         if (sorteio == true)
             continuar.setText("Sortear Equipes");
+
+        listaB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String list = null;
+
+                for (int i = 0; i < lista.size(); i++) {
+                    if (i == 0) {
+                        pessoa = lista.get(i);
+                        list = pessoa.getNome();
+                    } else {
+                        pessoa = lista.get(i);
+                        list = list + ", " + pessoa.getNome();
+                    }
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MultiCadastrar.this);
+                builder.setTitle(lista.size() + " jogadores cadastrados");
+                builder.setMessage(list);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.show();
+
+
+            }
+        });
 
         continuar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +98,8 @@ public class MultiCadastrar extends AppCompatActivity {
                 if (lista.size() < totalJogadores) {
                     Toast.makeText(getApplicationContext(), "Número inválido de jogadores!", Toast.LENGTH_SHORT).show();
                 } else {
+                    listaT.clear();
+
                     teste = lista;
                     if (sorteio == true) {
                         String elenco = null;
@@ -118,7 +155,6 @@ public class MultiCadastrar extends AppCompatActivity {
                             nome = "Time " + String.valueOf(time);
                             listaT.add(new Time(nome, String.valueOf(elenco)));
                             elenco = "";
-
                         }
                     }
 
@@ -126,6 +162,7 @@ public class MultiCadastrar extends AppCompatActivity {
                     it.putExtra("iJogadores", iJogadores);
                     it.putExtra("totalJogadores", totalJogadores);
                     it.putParcelableArrayListExtra("listaT", listaT);
+                    it.putParcelableArrayListExtra("lista", lista);
                     startActivity(it);
                 }
             }
@@ -148,9 +185,9 @@ public class MultiCadastrar extends AppCompatActivity {
                     list = list + ", " + pessoa.getNome();
                 }
             }
-            text.setText(String.valueOf(list));
+            listaB.setText(String.valueOf(list));
         } else {
-            text.setText("");
+            listaB.setText("");
         }
     }
 
@@ -177,5 +214,21 @@ public class MultiCadastrar extends AppCompatActivity {
         this.mostraLista();
 
     }
+
+    @Override
+    protected  void onSaveInstanceState (Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelableArrayList("lista", lista);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        lista = savedInstanceState.getParcelableArrayList("lista");
+        this.mostraLista();
+    }
+
 
 }

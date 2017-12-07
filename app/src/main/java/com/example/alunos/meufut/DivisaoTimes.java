@@ -1,9 +1,12 @@
 package com.example.alunos.meufut;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,10 +24,9 @@ import java.util.ArrayList;
 public class DivisaoTimes extends AppCompatActivity {
 
     ArrayList<Pessoa> lista = new ArrayList<>();
-    Button confirmar, remover, cadastrar;
+    Button confirmar, remover, cadastrar, listaB;
     Intent it;
     Pessoa pessoa;
-    TextView text;
 
 
     @Override
@@ -38,13 +40,14 @@ public class DivisaoTimes extends AppCompatActivity {
         cadastrar = (Button) findViewById(R.id.btnCadastrar);
         remover = (Button) findViewById(R.id.btnRemover);
         confirmar = (Button) findViewById(R.id.btnContinuar);
+        listaB = (Button) findViewById(R.id.btnLista);
         it = new Intent(this, OrganizarTimes.class);
-        text = (TextView) findViewById(R.id.txtLista);
+
 
         cadastrar.setTypeface(typeface);
         remover.setTypeface(typeface);
         confirmar.setTypeface(typeface);
-        text.setTypeface(typeface);
+        listaB.setTypeface(typeface);
 
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +56,38 @@ public class DivisaoTimes extends AppCompatActivity {
                 startActivity(it);
             }
 
+        });
+
+        listaB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String list = null;
+
+                for (int i = 0; i < lista.size(); i++) {
+                    if (i == 0) {
+                        pessoa = lista.get(i);
+                        list = pessoa.getNome();
+                    } else {
+                        pessoa = lista.get(i);
+                        list = list + ", " + pessoa.getNome();
+                    }
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(DivisaoTimes.this);
+                builder.setTitle(lista.size() + " jogadores cadastrados");
+                builder.setMessage(list);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    }
+                });
+
+                builder.show();
+
+
+            }
         });
     }
 
@@ -64,21 +99,23 @@ public class DivisaoTimes extends AppCompatActivity {
                 if (i == 0) {
                     pessoa = lista.get(i);
                     list = pessoa.getNome();
-                } else {
+                } else if (i < 15) {
                     pessoa = lista.get(i);
                     list = list + ", " + pessoa.getNome();
+                } else if (i == 15) {
+                    list = list + ", ...";
                 }
             }
-            text.setText(String.valueOf(list));
+            listaB.setText(String.valueOf(list));
         } else {
-            text.setText("");
+            listaB.setText("");
         }
     }
 
     public void cadastrar(View v) {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         EditText nome1 = (EditText) findViewById(R.id.txtNome);
-        nomr1.setTypeface(typeface);
+        nome1.setTypeface(typeface);
         String nome = nome1.getText().toString();
 
         if (nome != "")
