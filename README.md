@@ -1,4 +1,4 @@
-# Patch Notes v1.3
+# Patch Notes v1.5
 
 **v1.0**
 
