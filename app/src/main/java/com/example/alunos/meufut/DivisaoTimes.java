@@ -44,6 +44,7 @@ public class DivisaoTimes extends AppCompatActivity {
         cadastrar.setTypeface(typeface);
         remover.setTypeface(typeface);
         confirmar.setTypeface(typeface);
+        text.setTypeface(typeface);
 
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +76,9 @@ public class DivisaoTimes extends AppCompatActivity {
     }
 
     public void cadastrar(View v) {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         EditText nome1 = (EditText) findViewById(R.id.txtNome);
+        nomr1.setTypeface(typeface);
         String nome = nome1.getText().toString();
 
         if (nome != "")
