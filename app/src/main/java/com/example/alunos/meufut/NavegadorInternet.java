@@ -37,6 +37,7 @@ public class NavegadorInternet extends Activity implements View.OnClickListener 
         EditText campoEndereco = (EditText) findViewById(R.id.edtCidade);
         campoEndereco.setTypeface(typeface);
         String endereco = campoEndereco.getText().toString();
+        enfereco.setTypeface(typeface);
 
         String url = "https://www.google.com.br/maps/search/quadras+para+alugar+" + endereco + "/";
 
