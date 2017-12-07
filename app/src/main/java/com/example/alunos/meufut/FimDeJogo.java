@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.graphics.Typeface;
 import java.util.ArrayList;
 
 /**
@@ -34,36 +34,52 @@ public class FimDeJogo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fim);
 
         time1T = (TextView) findViewById(R.id.txtTime1);
+        time1T.setTypeface(typeface);
         time2T = (TextView) findViewById(R.id.txtTime2);
-
+        time2T.setTypeface(typeface);
         nomes1 = new EditText(FimDeJogo.this);
+        nomes1.setTypeface(typeface);
         nomes2 = new EditText(FimDeJogo.this);
-
+        nomes2.setTypeface(typeface);
         it = new Intent(this, OrganizarTimes.class);
         itM = new Intent(this, MainActivity.class);
 
         gols1B = (Button) findViewById(R.id.btnTime1);
+        gols1B.setTypeface(typeface);
         gols2B = (Button) findViewById(R.id.btnTime2);
+        gols2B.setTypeface(typeface);
         sim = (Button) findViewById(R.id.btnSim);
+        sim.setTypeface(typeface);
         nao = (Button) findViewById(R.id.btnNao);
+        nao.setTypeface(typeface);
 
         gol1 = getIntent().getIntExtra("gols1", 0);
+        gol1.setTypeface(typeface);
         gol2 = getIntent().getIntExtra("gols2", 0);
+        gol2.setTypeface(typeface);
 
         gols1B.setText(String.valueOf(gol1));
+        gols1B.setTypeface(typeface);
         gols2B.setText(String.valueOf(gol2));
+        gols2B.setTypeface(typeface);
 
         nome1 = getIntent().getStringExtra("nome1");
+        nome1.setTypeface(typeface);
         nome2 = getIntent().getStringExtra("nome2");
+        nome2.setTypeface(typeface);
 
 
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
+        time1.setTypeface(typeface);
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
+        time2.setTypeface(typeface);
         final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
+        fora.setTypeface(typeface);
 
         final ArrayList<Pessoa> lista = new ArrayList<>();
 
