@@ -25,7 +25,8 @@
 - Tela inicial
 - SIS & RIS (views DivisaoTimes, DivisaoDinheiro e Cronometro)
 
-**v1.4.1""
+**v1.5**
 
 - Correções no layout
 - Efeito botão pressionado
+- Imagem na tela de procurar quadras
