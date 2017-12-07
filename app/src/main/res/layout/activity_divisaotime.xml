@@ -34,7 +34,8 @@
             android:layout_below="@+id/textView3"
             android:layout_marginTop="15dp"
             android:ems="7"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:theme="@style/MyEditTextTheme"/>
 
         <EditText
             android:id="@+id/editValalug"
@@ -44,7 +45,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="36dp"
             android:ems="7"
-            android:inputType="numberSigned" />
+            android:inputType="numberSigned"
+            android:theme="@style/MyEditTextTheme"/>
+
 
         <TextView
             android:id="@+id/textView3"

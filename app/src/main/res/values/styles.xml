@@ -6,7 +6,12 @@
         <item name="colorPrimary">#3CB371</item>
         <item name="colorPrimaryDark">#3CB371</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
+    <style name="MyEditTextTheme">
+        <item name="colorControlNormal">#00AA00</item>
+        <item name="colorControlActivated">#000000</item>
+        <item name="colorControlHighlight">#000000</item>
     </style>
 
 </resources>

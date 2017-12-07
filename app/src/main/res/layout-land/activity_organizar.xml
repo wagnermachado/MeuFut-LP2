@@ -51,7 +51,9 @@
         android:layout_marginBottom="15dp"
         android:layout_marginStart="43dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:theme="@style/MyEditTextTheme"
+        />
 
     <Button
         android:id="@+id/btnOrganizar"

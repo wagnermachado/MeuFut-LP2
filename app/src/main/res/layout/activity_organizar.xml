@@ -26,7 +26,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_below="@+id/txt1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:theme="@style/MyEditTextTheme"
+        />
 
     <Button
         android:id="@+id/btnOrganizar"

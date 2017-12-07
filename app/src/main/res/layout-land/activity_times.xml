@@ -24,7 +24,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:theme="@style/MyEditTextTheme"
+        />
 
     <Button
         android:id="@+id/btnCadastrar"
