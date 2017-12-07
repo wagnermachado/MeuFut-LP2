@@ -23,7 +23,6 @@ public class NavegadorInternet extends Activity implements View.OnClickListener 
         setContentView(R.layout.activity_internet);
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
-
         final Button button = (Button) findViewById(R.id.btNavegar);
         button.setTypeface(typeface);
         button.setOnClickListener(this);
