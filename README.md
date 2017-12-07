@@ -30,3 +30,4 @@
 - Correções no layout
 - Efeito botão pressionado
 - Imagem na tela de procurar quadras
+- Edit Text atualizado
