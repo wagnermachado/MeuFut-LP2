@@ -74,11 +74,13 @@ public class Cronometro extends AppCompatActivity{
         }
 
         Typeface typefaceDigital7 = Typeface.createFromAsset(getAssets(), "fonts/digital-7.ttf");
-
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         final ArrayList<Pessoa> time1 = getIntent().getParcelableArrayListExtra("time1");
+        time1.setTypeface(typeface);
         final ArrayList<Pessoa> time2 = getIntent().getParcelableArrayListExtra("time2");
+        time2.setTypeface(typeface);
         final ArrayList<Pessoa> fora = getIntent().getParcelableArrayListExtra("fora");
-
+        
         it = new Intent(this, FimDeJogo.class);
 
         crono = false;
@@ -86,23 +88,32 @@ public class Cronometro extends AppCompatActivity{
 
         gols1 = 0;
         gols2 = 0;
-
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         final Chronometer relogio = (Chronometer) findViewById(R.id.relogio);
         Button iniciar = (Button) findViewById(R.id.btnStart);
         Button zerar = (Button) findViewById (R.id.btnBlank);
         Button parar = (Button) findViewById(R.id.btnStop);
 
         gol1 = (Button) findViewById(R.id.btnGol1);
+        gol1.setTypeface(typeface);
         gol2 = (Button) findViewById(R.id.btnGol2);
+        gol2.setTypeface(typeface);
         cancela1 = (Button) findViewById(R.id.btnCancela1);
+        cancela1.setTypeface(typeface);
         cancela2 = (Button) findViewById(R.id.btnCancela2);
+        cancela2.setTypeface(typeface);
         pla1 = (Button) findViewById(R.id.plaTime1);
+        pla1.setTypeface(typeface);
         pla2 = (Button) findViewById(R.id.plaTime2);
+        pla2.setTypeface(typeface);
         fim = (Button) findViewById(R.id.btnFim);
+        fim.setTypeface(typeface);
         nomeTime1 = (EditText) findViewById(R.id.insTime1);
         nomeTime2 = (EditText) findViewById(R.id.insTime2);
         nomeTime1.setText("Time 1");
+        nomeTime1.setTypeface(typeface);
         nomeTime2.setText("Time 2");
+        nomeTime2.setTypeface(typeface);
 
 
         relogio.setTypeface(typefaceDigital7);
