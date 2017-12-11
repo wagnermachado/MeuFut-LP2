@@ -8,9 +8,8 @@
         android:id="@+id/btnComecar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp"
+        android:layout_below="@+id/txtFora"
         android:background="@drawable/btn_selector"
         android:text="Começar o jogo"
         android:textAllCaps="false"
@@ -90,5 +89,14 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtFora"
+        android:layout_marginTop="48dp"
+        android:text="Button" />
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-# Patch Notes v1.6
+# Patch Notes v1.7
 
 **v1.0**
 
@@ -36,3 +36,7 @@
 
 - Botões para listagem de jogadores
 - Correção em divisão do dinheiro
+
+**v1.7**
+
+- Versão com alguns ADs

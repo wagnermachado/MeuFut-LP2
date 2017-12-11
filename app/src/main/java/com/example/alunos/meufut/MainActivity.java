@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         itD = new Intent(this, DivisaoTimes.class);
         itM = new Intent(this, MultiOrganizar.class);
+
+
+        MobileAds.initialize(this, "ca-app-pub-5400461494591224~2056624881");
+
 
         a = (Button) findViewById(R.id.imageButton4);
         b = (Button) findViewById(R.id.imageButton5);

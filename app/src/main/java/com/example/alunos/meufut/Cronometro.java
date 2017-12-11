@@ -1,37 +1,32 @@
 package com.example.alunos.meufut;
 
 import android.app.AlertDialog;
-import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.text.format.DateFormat;
-import android.view.Surface;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
-;import java.security.AccessController;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
-import java.util.Calendar;
 
 /**
  * Created by alunos on 21/09/17.
@@ -40,6 +35,8 @@ import java.util.Calendar;
 public class Cronometro extends AppCompatActivity{
 
 
+    private InterstitialAd mInterstitialAd;
+    private AdView mAdView;
     private long lastPause;
 
     Button gol1;
@@ -64,6 +61,22 @@ public class Cronometro extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                // Load the next interstitial.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         int orient=this.getResources().getConfiguration().orientation;
 
@@ -118,7 +131,6 @@ public class Cronometro extends AppCompatActivity{
         nomeTime1.setTypeface(typeface);
         nomeTime2.setText("Time 2");
         nomeTime2.setTypeface(typeface);
-
 
         relogio.setTypeface(typefaceDigital7);
         relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
@@ -251,6 +263,11 @@ public class Cronometro extends AppCompatActivity{
                 it.putExtra("gols2", gols2);
                 startActivity(it);
 
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "Não carregou");
+                }
             }
         });
 
