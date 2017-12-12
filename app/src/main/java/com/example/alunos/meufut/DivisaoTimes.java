@@ -27,6 +27,7 @@ public class DivisaoTimes extends AppCompatActivity {
     Button confirmar, remover, cadastrar, listaB, a;
     Intent it;
     Pessoa pessoa;
+    TextView dnj;
 
 
     @Override
@@ -38,21 +39,16 @@ public class DivisaoTimes extends AppCompatActivity {
 
 
         cadastrar = (Button) findViewById(R.id.btnCadastrar);
+        dnj = (TextView) findViewById(R.id.salvarPar);
+        dnj.setTypeface(typeface);
         remover = (Button) findViewById(R.id.btnRemover);
         confirmar = (Button) findViewById(R.id.btnContinuar);
         listaB = (Button) findViewById(R.id.btnLista);
-        it = new Intent(this, OrganizarTimes.class);
-
-
-
         cadastrar.setTypeface(typeface);
         remover.setTypeface(typeface);
         confirmar.setTypeface(typeface);
         listaB.setTypeface(typeface);
-
-
-
-
+        it = new Intent(this, OrganizarTimes.class);
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
