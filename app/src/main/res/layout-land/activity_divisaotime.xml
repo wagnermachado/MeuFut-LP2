@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/editValalug"
-            android:layout_below="@+id/textView3"
+            android:layout_below="@+id/numJog"
             android:ems="7"
             android:inputType="numberDecimal"
             android:theme="@style/MyEditTextTheme"/>
@@ -40,7 +40,7 @@
             android:id="@+id/editValalug"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textView4"
+            android:layout_alignTop="@+id/valAlug"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="36dp"
             android:ems="7"
@@ -48,7 +48,7 @@
             android:theme="@style/MyEditTextTheme"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/numJog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -61,7 +61,7 @@
             android:textStyle="bold|italic" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/valAlug"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"

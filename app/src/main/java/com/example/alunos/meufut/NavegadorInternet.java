@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -20,19 +21,27 @@ import com.google.android.gms.ads.AdView;
 public class NavegadorInternet extends Activity implements View.OnClickListener {
 
     private AdView mAdView;
+    TextView digLoc;
+    Button proc;
+    EditText digit;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internet);
 
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+        digLoc = (TextView) findViewById(R.id.salvarPar);
+        proc = (Button) findViewById(R.id.btNavegar);
+        digit = (EditText) findViewById(R.id.edtCidade);
+        digLoc.setTypeface(typeface);
+        proc.setTypeface(typeface);
+        digit.setTypeface(typeface);
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         mAdView.loadAd(adRequest);
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         final Button button = (Button) findViewById(R.id.btNavegar);
-        button.setTypeface(typeface);
         button.setOnClickListener(this);
 
     }
@@ -41,12 +50,11 @@ public class NavegadorInternet extends Activity implements View.OnClickListener 
 
     public void onClick(View view) {
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+
         EditText campoEndereco = (EditText) findViewById(R.id.edtCidade);
-        campoEndereco.setTypeface(typeface);
         String endereco = campoEndereco.getText().toString();
 
-        String url = "https://www.google.com.br/maps/search/quadras+para+alugar+" + endereco + "/";
+        String url = "https://www.google.com.br/maps/search/quadras+de+futebol+em+" + endereco + "/";
 
         Uri uri = Uri.parse(url);
 

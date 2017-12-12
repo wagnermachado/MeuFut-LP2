@@ -3,6 +3,7 @@ package com.example.alunos.meufut;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -20,19 +21,40 @@ import java.util.ArrayList;
 
 public class MultiLista extends AppCompatActivity {
 
-    TextView text;
+    TextView text, tt1, tt2, vs, visu;
+    EditText vt1,vt2;
     int iTimes, iTime1, iTime2;
     ArrayList<Time> listaT = new ArrayList<>();
     Time t, t1, t2;
     String nome, elenco, ultima;
-    Button iniciar, tela;
+    Button iniciar, tela, ini, com;
     EditText time1, time2;
     Intent it, itV, itC;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+
         setContentView(R.layout.activity_multilista);
+
+        tt1 = (TextView) findViewById(R.id.txtvTime1);
+        tt2 = (TextView) findViewById(R.id.txtvTime2);
+        vs = (TextView) findViewById(R.id.txtvTime);
+        visu = (TextView) findViewById(R.id.txtLista);
+        vt1 = (EditText) findViewById(R.id.txtTime1);
+        vt2 = (EditText) findViewById(R.id.txtTime2);
+        ini = (Button) findViewById(R.id.btnIniciar);
+        com = (Button) findViewById(R.id.btnVoltar);
+        tt1.setTypeface(typeface);
+        tt2.setTypeface(typeface);
+        vs.setTypeface(typeface);
+        visu.setTypeface(typeface);
+        vt1.setTypeface(typeface);
+        vt2.setTypeface(typeface);
+        ini.setTypeface(typeface);
+        com.setTypeface(typeface);
+
 
         final ArrayList<Pessoa> lista = getIntent().getParcelableArrayListExtra("lista");
 

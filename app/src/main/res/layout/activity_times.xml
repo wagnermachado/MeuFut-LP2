@@ -5,7 +5,7 @@
     >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/salvarPar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/salvarPar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:theme="@style/MyEditTextTheme"
@@ -32,9 +32,9 @@
         android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/txtNome"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/btn_selector"
         android:onClick="cadastrar"
         android:text="Cadastrar jogador"
@@ -46,9 +46,9 @@
         android:id="@+id/btnContinuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnRemover"
-        android:layout_marginBottom="11dp"
+        android:layout_below="@+id/btnLista"
+        android:layout_marginTop="14dp"
         android:background="@drawable/btn_selector"
         android:text="Confirmar Equipes"
         android:textAllCaps="false"
@@ -59,9 +59,9 @@
         android:id="@+id/btnRemover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtNome"
         android:layout_below="@+id/btnCadastrar"
-        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
         android:background="@drawable/btn_selector"
         android:onClick="remover"
         android:text="Remover jogador"
@@ -73,9 +73,20 @@
         android:id="@+id/btnLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/btnRemover"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/botaocomecar"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/black"/>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_test">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

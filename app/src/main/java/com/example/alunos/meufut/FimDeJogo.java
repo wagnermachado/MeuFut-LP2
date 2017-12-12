@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Typeface;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /**
@@ -24,8 +27,8 @@ public class FimDeJogo extends AppCompatActivity {
     EditText nomes1, nomes2;
     int gol1, gol2;
     Intent it, itM;
-    Button gols1B, gols2B, sim, nao;
-    TextView time1T, time2T;
+    Button gols1B, gols2B, sim, nao, bSim, bNao;
+    TextView time1T, time2T,salvarP,tT1,tT2;
     String time1List;
     String time2List;
     String nome1;
@@ -37,7 +40,16 @@ public class FimDeJogo extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fim);
-
+        salvarP = (TextView) findViewById(R.id.salvarPar);
+        tT1 = (TextView)  findViewById(R.id.txtTime1);
+        tT2 = (TextView)  findViewById(R.id.txtTime2);
+        bSim = (Button) findViewById(R.id.btnSim);
+        bNao = (Button) findViewById(R.id.btnNao);
+        salvarP.setTypeface(typeface);
+        tT1.setTypeface(typeface);
+        tT2.setTypeface(typeface);
+        bSim.setTypeface(typeface);
+        bNao.setTypeface(typeface);
         time1T = (TextView) findViewById(R.id.txtTime1);
         time1T.setTypeface(typeface);
         time2T = (TextView) findViewById(R.id.txtTime2);

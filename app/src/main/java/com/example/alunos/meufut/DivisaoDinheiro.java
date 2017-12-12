@@ -1,12 +1,13 @@
 package com.example.alunos.meufut;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.graphics.Typeface;
 import android.widget.Toast;
 
 /**
@@ -16,8 +17,9 @@ import android.widget.Toast;
 public class DivisaoDinheiro extends AppCompatActivity {
 
     Double result;
-    TextView txt;
+    TextView txt, nJ, vA;
     Typeface typeface;
+    Button a;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +29,21 @@ public class DivisaoDinheiro extends AppCompatActivity {
         setContentView(R.layout.activity_divisaotime);
         txt = (TextView) findViewById(R.id.textTotal);
         txt.setTypeface(typeface);
+        a = (Button) findViewById(R.id.button4);
+        nJ = (TextView) findViewById(R.id.numJog);
+        nJ.setTypeface(typeface);
+        vA = (TextView) findViewById(R.id.valAlug);
+        vA.setTypeface(typeface);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+        a.setTypeface(typeface);
     }
     public void divd(View v){
         //editFont
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         EditText numjog = (EditText) findViewById(R.id.editNumjog);
         EditText valalug = (EditText) findViewById(R.id.editValalug);
         numjog.setTypeface(typeface);
         valalug.setTypeface(typeface);
-
         String nome1 = numjog.getText().toString();
         String nome2 = valalug.getText().toString();
 

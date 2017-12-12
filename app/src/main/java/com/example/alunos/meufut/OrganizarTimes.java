@@ -14,6 +14,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -24,7 +26,7 @@ import java.util.Random;
 public class OrganizarTimes extends AppCompatActivity {
 
 
-    EditText numero1;
+    EditText numero1, ejpt;
     ArrayList<Pessoa> time1 = new ArrayList<>();
     ArrayList<Pessoa> time2 = new ArrayList<>();
     ArrayList<Pessoa> fora = new ArrayList<>();
@@ -33,7 +35,7 @@ public class OrganizarTimes extends AppCompatActivity {
     Button continuar;
     Intent it, itC;
     Random rand = new Random();
-    TextView home, away, out;
+    TextView home, away, out, jpt;
 
 
     @Override
@@ -41,7 +43,10 @@ public class OrganizarTimes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
-
+        ejpt = (EditText) findViewById(R.id.numJogadores);
+        jpt = (TextView) findViewById(R.id.txt1);
+        ejpt.setTypeface(typeface);
+        jpt.setTypeface(typeface);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organizar);
 

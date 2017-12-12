@@ -24,17 +24,17 @@ import java.util.ArrayList;
 public class DivisaoTimes extends AppCompatActivity {
 
     ArrayList<Pessoa> lista = new ArrayList<>();
-    Button confirmar, remover, cadastrar, listaB;
+    Button confirmar, remover, cadastrar, listaB, a;
     Intent it;
     Pessoa pessoa;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
 
 
         cadastrar = (Button) findViewById(R.id.btnCadastrar);
@@ -44,10 +44,14 @@ public class DivisaoTimes extends AppCompatActivity {
         it = new Intent(this, OrganizarTimes.class);
 
 
+
         cadastrar.setTypeface(typeface);
         remover.setTypeface(typeface);
         confirmar.setTypeface(typeface);
         listaB.setTypeface(typeface);
+
+
+
 
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,9 +117,7 @@ public class DivisaoTimes extends AppCompatActivity {
     }
 
     public void cadastrar(View v) {
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         EditText nome1 = (EditText) findViewById(R.id.txtNome);
-        nome1.setTypeface(typeface);
         String nome = nome1.getText().toString();
 
         if (nome != "")

@@ -9,12 +9,13 @@
     >
 
     <TextView
-        android:id="@+id/txtView"
+        android:id="@+id/txtdnt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/rockwell"
         android:text="Digite um número de times (3-6):"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +40,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintVertical_bias="0.084"
+        android:theme="@style/MyEditTextTheme" />
 
     <Button
         android:id="@+id/btnContinuar"
@@ -50,6 +52,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_selector"
+        android:fontFamily="@font/rockwell"
         android:text="Continuar"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,13 +63,14 @@
         app:layout_constraintVertical_bias="0.379" />
 
     <TextView
-        android:id="@+id/txtView"
+        android:id="@+id/txtjpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/rockwell"
         android:text="Jogadores por time (4-11):"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
