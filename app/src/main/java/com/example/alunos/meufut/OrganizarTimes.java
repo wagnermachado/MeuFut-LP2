@@ -26,7 +26,7 @@ import java.util.Random;
 public class OrganizarTimes extends AppCompatActivity {
 
 
-    EditText numero1, ejpt;
+    EditText numero1;
     ArrayList<Pessoa> time1 = new ArrayList<>();
     ArrayList<Pessoa> time2 = new ArrayList<>();
     ArrayList<Pessoa> fora = new ArrayList<>();
@@ -42,17 +42,16 @@ public class OrganizarTimes extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
-        ejpt = (EditText) findViewById(R.id.numJogadores);
-        jpt = (TextView) findViewById(R.id.txt1);
-        ejpt.setTypeface(typeface);
-        jpt.setTypeface(typeface);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organizar);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+        jpt = (TextView) findViewById(R.id.txt1);
+        jpt.setTypeface(typeface);
 
         final ArrayList<Pessoa>  lista = getIntent().getParcelableArrayListExtra("lista");
 
         numero1 = (EditText) findViewById(R.id.numJogadores);
+        numero1.setTypeface(typeface);
 
         organizar = (Button) findViewById(R.id.btnOrganizar);
         continuar = (Button) findViewById(R.id.btnComecar);
@@ -87,14 +86,22 @@ public class OrganizarTimes extends AppCompatActivity {
                 time2.clear();
                 fora.clear();
 
-                ArrayList<Pessoa> teste = getIntent().getParcelableArrayListExtra("lista");
+                ArrayList<Pessoa> teste = lista;
                 String numero = numero1.getText().toString();
                 boolean numjog = true;
                 Pessoa pessoa;
-                int jogadores = Integer.parseInt(numero);
-                if (TextUtils.isEmpty(numero) || (jogadores < 4) || (jogadores > 11)) {
+                int jogadores = 0;
+
+                if (TextUtils.isEmpty(numero)) {
+                    Toast.makeText(getApplicationContext(), "Nenhum valor foi inserido!", Toast.LENGTH_SHORT).show();
                     numjog = false;
+                } else {
+                    jogadores = Integer.parseInt(numero);
+                    if ((jogadores < 4) || (jogadores > 11)) {
+                        numjog = false;
+                    }
                 }
+
 
                 if (numjog) {
                     if (lista.size() / jogadores < 2) {
