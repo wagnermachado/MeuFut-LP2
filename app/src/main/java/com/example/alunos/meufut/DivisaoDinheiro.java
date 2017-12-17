@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 /**
  * Created by alunos on 28/09/17.
  */
@@ -20,6 +23,7 @@ public class DivisaoDinheiro extends AppCompatActivity {
     TextView txt, nJ, vA;
     Typeface typeface;
     Button a;
+    AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,10 @@ public class DivisaoDinheiro extends AppCompatActivity {
         vA.setTypeface(typeface);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         a.setTypeface(typeface);
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
     public void divd(View v){
         //editFont

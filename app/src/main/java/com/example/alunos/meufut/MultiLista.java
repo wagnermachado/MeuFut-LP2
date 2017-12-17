@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 /**
@@ -30,6 +33,7 @@ public class MultiLista extends AppCompatActivity {
     Button iniciar, tela, ini, com;
     EditText time1, time2;
     Intent it, itV, itC;
+    AdView mAdView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,14 @@ public class MultiLista extends AppCompatActivity {
         ini.setTypeface(typeface);
         com.setTypeface(typeface);
 
+        int orient=this.getResources().getConfiguration().orientation;
+
+        if (orient == 1) {
+        } else {
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
 
         final ArrayList<Pessoa> lista = getIntent().getParcelableArrayListExtra("lista");
 

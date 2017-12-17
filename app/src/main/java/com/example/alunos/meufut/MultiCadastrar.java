@@ -3,6 +3,7 @@ package com.example.alunos.meufut;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -25,6 +29,7 @@ public class MultiCadastrar extends AppCompatActivity {
     ArrayList<Pessoa> lista = new ArrayList<>();
     ArrayList<Pessoa> teste = new ArrayList<>();
     ArrayList<Time> listaT = new ArrayList<>();
+    AdView mAdView;
     Intent it;
     Pessoa pessoa;
     int iTimes, iJogadores, totalJogadores, r, time;
@@ -56,6 +61,14 @@ public class MultiCadastrar extends AppCompatActivity {
 
         listaB = (Button) findViewById(R.id.btnLista);
         listaB.setTypeface(typeface);
+
+        int orient=this.getResources().getConfiguration().orientation;
+
+        if (orient == 1) {
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
 
         if (sorteio == true)
             continuar.setText("Sortear Equipes");

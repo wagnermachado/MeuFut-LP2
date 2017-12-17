@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.alunos.meufut.Pessoa;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 
@@ -28,13 +30,18 @@ public class DivisaoTimes extends AppCompatActivity {
     Intent it;
     Pessoa pessoa;
     TextView dnj;
-
+    AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
 
 

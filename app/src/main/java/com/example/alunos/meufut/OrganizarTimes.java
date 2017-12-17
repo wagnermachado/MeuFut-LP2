@@ -14,6 +14,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -37,6 +40,7 @@ public class OrganizarTimes extends AppCompatActivity {
     Random rand = new Random();
     TextView home, away, out, jpt;
 
+    AdView mAdView;
 
     @Override
 
@@ -47,6 +51,15 @@ public class OrganizarTimes extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         jpt = (TextView) findViewById(R.id.txt1);
         jpt.setTypeface(typeface);
+
+        int orient=this.getResources().getConfiguration().orientation;
+
+        if (orient == 1) {
+        } else {
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
 
         final ArrayList<Pessoa>  lista = getIntent().getParcelableArrayListExtra("lista");
 
@@ -182,8 +195,6 @@ public class OrganizarTimes extends AppCompatActivity {
                     home.setText("Time 1: " + time1List);
                     away.setText("Time 2: " + time2List);
                     out.setText("Fora: " + foraList);
-                } else {
-                    Toast.makeText(getApplicationContext(), "O número inserido é inválido!", Toast.LENGTH_SHORT).show();
                 }
             }
 

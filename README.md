@@ -1,4 +1,4 @@
-# Patch Notes v1.7
+# Patch Notes v1.8
 
 **v1.0**
 
@@ -40,3 +40,8 @@
 **v1.7**
 
 - Versão com alguns ADs
+
+**v1.8**
+
+- Colocação dos Banner ADs
+- Correção de pequenos erros

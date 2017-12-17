@@ -3,6 +3,7 @@ package com.example.alunos.meufut;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,8 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 /**
  * Created by alunos on 01/11/17.
@@ -37,9 +40,12 @@ public class NavegadorInternet extends Activity implements View.OnClickListener 
         digLoc.setTypeface(typeface);
         proc.setTypeface(typeface);
         digit.setTypeface(typeface);
-        mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
-        mAdView.loadAd(adRequest);
+
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+
+
 
         final Button button = (Button) findViewById(R.id.btNavegar);
         button.setOnClickListener(this);
@@ -54,7 +60,7 @@ public class NavegadorInternet extends Activity implements View.OnClickListener 
         EditText campoEndereco = (EditText) findViewById(R.id.edtCidade);
         String endereco = campoEndereco.getText().toString();
 
-        String url = "https://www.google.com.br/maps/search/quadras+de+futebol+em+" + endereco + "/";
+        String url = "https://www.google.com.br/maps/search/quadras+para+alugar+em+" + endereco + "/";
 
         Uri uri = Uri.parse(url);
 

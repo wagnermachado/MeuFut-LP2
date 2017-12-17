@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +16,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 /**
  * Created by elyas on 02/12/17.
  */
 
 public class MultiOrganizar extends AppCompatActivity {
 
+    AdView mAdView;
     EditText numTimes, numJogadores, ednt, ejpt;
     TextView dnt, jpt;
     Button continuar;
@@ -49,6 +54,16 @@ public class MultiOrganizar extends AppCompatActivity {
         numJogadores.setTypeface(typeface);
         continuar = (Button) findViewById(R.id.btnContinuar);
         continuar.setTypeface(typeface);
+
+        int orient=this.getResources().getConfiguration().orientation;
+
+        if (orient == 1) {
+        } else {
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
+
 
         continuar.setOnClickListener(new View.OnClickListener() {
             @Override
