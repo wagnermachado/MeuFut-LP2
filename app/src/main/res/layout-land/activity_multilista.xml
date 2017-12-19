@@ -7,11 +7,12 @@
     android:background="@drawable/fundopagina"
     >
 
-    <TextView
-        android:id="@+id/txtLista"
+    <Button
+        android:id="@+id/btnLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:background="@drawable/btn_selector"
+        android:text="Ver Times" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -76,14 +77,13 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName|number"
+            android:theme="@style/MyEditTextTheme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.929"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.111"
-            android:theme="@style/MyEditTextTheme"
-            />
+            app:layout_constraintVertical_bias="0.111" />
 
         <TextView
             android:id="@+id/txtvTime"
@@ -112,10 +112,10 @@
             android:text="COMEÇAR"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.111"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.395" />
+            app:layout_constraintVertical_bias="0.545" />
 
         <Button
             android:id="@+id/btnVoltar"
@@ -129,9 +129,10 @@
             android:text="TELA INICIAL"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.719"
+            app:layout_constraintStart_toEndOf="@+id/btnIniciar"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.68" />
+            app:layout_constraintVertical_bias="0.545" />
 
         <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
@@ -147,8 +148,10 @@
             ads:adUnitId="@string/banner_test"
             ads:layout_constraintBottom_toBottomOf="parent"
             ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintHorizontal_bias="0.498"
             ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/btnVoltar"></com.google.android.gms.ads.AdView>
+            ads:layout_constraintTop_toBottomOf="@+id/btnVoltar"
+            ads:layout_constraintVertical_bias="1.0"></com.google.android.gms.ads.AdView>
 
     </android.support.constraint.ConstraintLayout>
 

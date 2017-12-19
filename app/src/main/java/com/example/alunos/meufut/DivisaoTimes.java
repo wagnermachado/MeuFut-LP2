@@ -3,6 +3,7 @@ package com.example.alunos.meufut;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -37,11 +38,13 @@ public class DivisaoTimes extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_times);
+        int orient=this.getResources().getConfiguration().orientation;
 
-        mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
+        if (orient == 1) {
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
 
 
 

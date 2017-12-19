@@ -1,5 +1,7 @@
 package com.example.alunos.meufut;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -36,6 +38,7 @@ public class OrganizarTimes extends AppCompatActivity {
 
     Button organizar;
     Button continuar;
+    Button bLista;
     Intent it, itC;
     Random rand = new Random();
     TextView home, away, out, jpt;
@@ -68,15 +71,13 @@ public class OrganizarTimes extends AppCompatActivity {
 
         organizar = (Button) findViewById(R.id.btnOrganizar);
         continuar = (Button) findViewById(R.id.btnComecar);
+        bLista = (Button) findViewById(R.id.btnLista);
+        bLista.setTypeface(typeface);
         continuar.setTypeface(typeface);
         organizar.setTypeface(typeface);
 
         it = new Intent(this, DivisaoTimes.class);
         itC = new Intent(this, Cronometro.class);
-
-        home = (TextView) findViewById(R.id.txtTime1);
-        away = (TextView) findViewById(R.id.txtTime2);
-        out = (TextView) findViewById(R.id.txtFora);
 
         numero1.setInputType(InputType.TYPE_CLASS_NUMBER);
 
@@ -102,8 +103,8 @@ public class OrganizarTimes extends AppCompatActivity {
                 ArrayList<Pessoa> teste = lista;
                 String numero = numero1.getText().toString();
                 boolean numjog = true;
-                Pessoa pessoa;
                 int jogadores = 0;
+                numero1.setText("");
 
                 if (TextUtils.isEmpty(numero)) {
                     Toast.makeText(getApplicationContext(), "Nenhum valor foi inserido!", Toast.LENGTH_SHORT).show();
@@ -160,45 +161,80 @@ public class OrganizarTimes extends AppCompatActivity {
                         }
                     }
 
-                    String time1List = null;
-                    String time2List = null;
-                    String foraList = "";
-                    for (int i = 0; i < time1.size(); i++) {
-                        if (i == 0) {
-                            pessoa = time1.get(i);
-                            time1List = pessoa.getNome();
-                        } else {
-                            pessoa = time1.get(i);
-                            time1List = time1List + ", " + pessoa.getNome();
-                        }
-                    }
-
-                    for (int i = 0; i < time2.size(); i++) {
-                        if (i == 0) {
-                            pessoa = time2.get(i);
-                            time2List = pessoa.getNome();
-                        } else {
-                            pessoa = time2.get(i);
-                            time2List = time2List + ", " + pessoa.getNome();
-                        }
-                    }
-
-                    for (int i = 0; i < fora.size(); i++) {
-                        if (i == 0) {
-                            pessoa = fora.get(i);
-                            foraList = pessoa.getNome();
-                        } else {
-                            pessoa = fora.get(i);
-                            foraList = foraList + ", " + pessoa.getNome();
-                        }
-                    }
-                    home.setText("Time 1: " + time1List);
-                    away.setText("Time 2: " + time2List);
-                    out.setText("Fora: " + foraList);
                 }
+                bLista.setVisibility(View.VISIBLE);
             }
 
         });
+
+        bLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Pessoa pessoa = null;
+                String time1List = null;
+                String time2List = null;
+                String foraList = "";
+                for (int i = 0; i < time1.size(); i++) {
+                    if (i == 0) {
+                        pessoa = time1.get(i);
+                        time1List = pessoa.getNome();
+                    } else {
+                        pessoa = time1.get(i);
+                        time1List = time1List + ", " + pessoa.getNome();
+                    }
+                }
+
+                for (int i = 0; i < time2.size(); i++) {
+                    if (i == 0) {
+                        pessoa = time2.get(i);
+                        time2List = pessoa.getNome();
+                    } else {
+                        pessoa = time2.get(i);
+                        time2List = time2List + ", " + pessoa.getNome();
+                    }
+                }
+
+                for (int i = 0; i < fora.size(); i++) {
+                    if (i == 0) {
+                        pessoa = fora.get(i);
+                        foraList = pessoa.getNome();
+                    } else {
+                        pessoa = fora.get(i);
+                        foraList = foraList + ", " + pessoa.getNome();
+                    }
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(OrganizarTimes.this);
+                builder.setMessage("Time 1: " + time1List + "\n\n" + "Time 2: " + time2List + "\n\n" + "Fora: " + foraList);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.show();
+            }
+        });
+    }
+
+    @Override
+    protected  void onSaveInstanceState (Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("time1", time1);
+        outState.putParcelableArrayList("time2", time2);
+        outState.putParcelableArrayList("fora", fora);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        time1 = savedInstanceState.getParcelableArrayList("time1");
+        time2 = savedInstanceState.getParcelableArrayList("time2");
+        fora = savedInstanceState.getParcelableArrayList("fora");
 
     }
 

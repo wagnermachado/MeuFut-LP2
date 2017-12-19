@@ -8,24 +8,13 @@
         android:id="@+id/btnComecar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtFora"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentEnd="true"
         android:background="@drawable/btn_selector"
         android:text="Começar o jogo"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold|italic" />
-
-    <TextView
-        android:id="@+id/txtFora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtTime2"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt1"
@@ -45,50 +34,27 @@
         android:id="@+id/numJogadores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/txtTime1"
+        android:layout_alignBaseline="@+id/btnOrganizar"
+        android:layout_alignBottom="@+id/btnOrganizar"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginStart="43dp"
+        android:layout_marginStart="42dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:theme="@style/MyEditTextTheme"
-        />
+        android:theme="@style/MyEditTextTheme" />
 
     <Button
         android:id="@+id/btnOrganizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/numJogadores"
-        android:layout_alignBottom="@+id/numJogadores"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="29dp"
+        android:layout_below="@+id/txt1"
+        android:layout_marginEnd="23dp"
         android:background="@drawable/btn_selector"
         android:text="Sortear"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold|italic" />
 
-    <TextView
-        android:id="@+id/txtTime1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtTime2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtTime1"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
@@ -97,5 +63,14 @@
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_test"></com.google.android.gms.ads.AdView>
+
+    <Button
+        android:id="@+id/btnLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnOrganizar"
+        android:background="@drawable/btn_selector"
+        android:text="Ver Times" />
 
 </RelativeLayout>

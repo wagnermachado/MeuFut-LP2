@@ -1,4 +1,4 @@
-# Patch Notes v1.8
+# Patch Notes v1.9
 
 **v1.0**
 
@@ -45,3 +45,9 @@
 
 - Colocação dos Banner ADs
 - Correção de pequenos erros
+
+**v1.9**
+
+- Correção de erros nos ADs
+- Correção de erros no landscape
+- Botão para exibir times

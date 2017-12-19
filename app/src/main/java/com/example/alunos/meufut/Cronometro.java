@@ -1,10 +1,12 @@
 package com.example.alunos.meufut;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -39,6 +41,8 @@ public class Cronometro extends AppCompatActivity{
     private AdView mAdView;
     private long lastPause;
 
+    private AudioManager mAudioManager;
+
     Button gol1;
     Button gol2;
     Button cancela1;
@@ -50,9 +54,13 @@ public class Cronometro extends AppCompatActivity{
     EditText nomeTime1, nomeTime2;
     String textoM;
 
+    CountDownTimer limite;
+
     int gols1;
     int gols2;
     long minutos;
+
+    int volume;
 
     boolean crono, contagem;
 
@@ -62,6 +70,7 @@ public class Cronometro extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
 
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
@@ -174,13 +183,17 @@ public class Cronometro extends AppCompatActivity{
                     crono = true;
 
                     if (contagem) {
-                        new CountDownTimer(minutos * 60000 + 1000, minutos * 60000 / 2) {
+                        limite = new CountDownTimer(minutos * 60000 + 1000, minutos * 60000 / 2) {
 
                             public void onTick(long millisUntilFinished) {
                             }
 
                             public void onFinish() {
                                 Toast.makeText(getApplicationContext(), "Fim do jogo!", Toast.LENGTH_LONG).show();
+
+                                volume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+                                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
+
                                 MediaPlayer ring = MediaPlayer.create(Cronometro.this, R.raw.apito);
                                 ring.start();
 
@@ -260,6 +273,20 @@ public class Cronometro extends AppCompatActivity{
                 it.putExtra("fora", fora);
                 it.putExtra("gols1", gols1);
                 it.putExtra("gols2", gols2);
+
+                /*
+                if (contagem) {
+
+                    limite.cancel();
+                    contagem = false;
+                    crono = false;
+
+                    relogio.setBase(SystemClock.elapsedRealtime());
+                    relogio.stop();
+                    lastPause = SystemClock.elapsedRealtime();
+
+                }*/
+
                 startActivity(it);
 
                 if (mInterstitialAd.isLoaded()) {
@@ -270,6 +297,14 @@ public class Cronometro extends AppCompatActivity{
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (contagem) {
+            limite.cancel();
+        }
+        super.onBackPressed();
     }
 
 }

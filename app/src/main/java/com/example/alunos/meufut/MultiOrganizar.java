@@ -51,6 +51,7 @@ public class MultiOrganizar extends AppCompatActivity {
         numTimes.setTypeface(typeface);
         numJogadores = (EditText) findViewById(R.id.txtNumero);
         numJogadores.setInputType(InputType.TYPE_CLASS_NUMBER);
+        numTimes.setInputType(InputType.TYPE_CLASS_NUMBER);
         numJogadores.setTypeface(typeface);
         continuar = (Button) findViewById(R.id.btnContinuar);
         continuar.setTypeface(typeface);

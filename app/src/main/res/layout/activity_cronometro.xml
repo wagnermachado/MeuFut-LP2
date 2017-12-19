@@ -291,6 +291,7 @@
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/btnFim"></com.google.android.gms.ads.AdView>
+        ads:layout_constraintTop_toBottomOf="@+id/btnFim"
+        ads:layout_constraintVertical_bias="0.894"></com.google.android.gms.ads.AdView>
 
 </android.support.constraint.ConstraintLayout>

@@ -7,11 +7,12 @@
     android:background="@drawable/fundopagina"
     >
 
-    <TextView
-        android:id="@+id/txtLista"
+    <Button
+        android:id="@+id/btnLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:background="@drawable/btn_selector"
+        android:text="Ver Times" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

@@ -24,13 +24,13 @@ import java.util.ArrayList;
 
 public class MultiLista extends AppCompatActivity {
 
-    TextView text, tt1, tt2, vs, visu;
+    TextView tt1, tt2, vs, visu;
     EditText vt1,vt2;
     int iTimes, iTime1, iTime2;
     ArrayList<Time> listaT = new ArrayList<>();
     Time t, t1, t2;
     String nome, elenco, ultima;
-    Button iniciar, tela, ini, com;
+    Button iniciar, tela, ini, com, bLista;
     EditText time1, time2;
     Intent it, itV, itC;
     AdView mAdView;
@@ -45,7 +45,6 @@ public class MultiLista extends AppCompatActivity {
         tt1 = (TextView) findViewById(R.id.txtvTime1);
         tt2 = (TextView) findViewById(R.id.txtvTime2);
         vs = (TextView) findViewById(R.id.txtvTime);
-        visu = (TextView) findViewById(R.id.txtLista);
         vt1 = (EditText) findViewById(R.id.txtTime1);
         vt2 = (EditText) findViewById(R.id.txtTime2);
         ini = (Button) findViewById(R.id.btnIniciar);
@@ -72,12 +71,13 @@ public class MultiLista extends AppCompatActivity {
 
         listaT = getIntent().getParcelableArrayListExtra("listaT");
 
+        bLista = (Button) findViewById(R.id.btnLista);
+        bLista.setTypeface(typeface);
+
         itC = new Intent(this, MultiCadastrar.class);
         itC.putParcelableArrayListExtra("lista", lista);
 
         iTimes = getIntent().getIntExtra("iTimes", 0);
-
-        text = (TextView) findViewById(R.id.txtLista);
 
         iniciar = (Button) findViewById(R.id.btnIniciar);
         tela = (Button) findViewById(R.id.btnVoltar);
@@ -103,7 +103,23 @@ public class MultiLista extends AppCompatActivity {
 
         }
 
-        text.setText(ultima);
+        bLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MultiLista.this);
+                builder.setMessage(ultima);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.show();
+
+            }
+        });
 
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override

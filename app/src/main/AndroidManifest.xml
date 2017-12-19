@@ -18,20 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cronometro"></activity>
+        <activity android:name=".Cronometro" android:windowSoftInputMode="adjustPan">
+        </activity>
         <activity android:name=".MainActivity"></activity>
 
-        <activity android:name=".DivisaoDinheiro"></activity>
-        <activity android:name=".DivisaoTimes"></activity>
-        <activity android:name=".OrganizarTimes"></activity>
-        <activity android:name=".NavegadorInternet"></activity>
+        <activity android:name=".DivisaoDinheiro" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".DivisaoTimes" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".OrganizarTimes" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".NavegadorInternet" android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".FimDeJogo"></activity>
         <activity android:name=".ConsultaActivity"></activity>
-        <activity android:name=".MultiOrganizar"></activity>
-        <activity android:name=".MultiCadastrar"></activity>
-        <activity android:name=".MultiLista"></activity>
-        <activity android:name=".MultiCronometro"></activity>
-        <activity android:name=".MultiFimDeJogo"></activity>
+        <activity android:name=".MultiOrganizar" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".MultiCadastrar" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".MultiLista" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".MultiCronometro" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".MultiFimDeJogo" android:windowSoftInputMode="adjustPan"></activity>
 
     </application>
 

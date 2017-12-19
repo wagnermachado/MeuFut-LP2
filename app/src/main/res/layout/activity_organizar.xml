@@ -43,41 +43,6 @@
         android:textSize="20sp"
         android:textStyle="bold|italic" />
 
-    <TextView
-        android:id="@+id/txtTime1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnOrganizar"
-        android:layout_marginTop="16dp"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtTime2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtTime1"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtFora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtTime2"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
-
     <Button
         android:id="@+id/btnComecar"
         android:layout_width="match_parent"
@@ -90,5 +55,15 @@
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/btnLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnOrganizar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_selector"
+        android:text="Ver Times" />
 
 </RelativeLayout>
