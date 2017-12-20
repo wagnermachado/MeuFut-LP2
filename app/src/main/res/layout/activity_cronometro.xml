@@ -77,22 +77,17 @@
     <Button
         android:id="@+id/btnCancela1"
         android:layout_width="49dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="9dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/botaomenos"
         android:text="-"
         android:textColor="@android:color/background_light"
         android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintBottom_toTopOf="@+id/btnFim"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintTop_toBottomOf="@+id/plaTime1"
+        app:layout_constraintVertical_bias="0.671" />
 
     <Button
         android:id="@+id/btnBlank"
@@ -195,10 +190,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnCancela1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776" />
+        app:layout_constraintVertical_bias="0.785" />
 
     <Button
         android:id="@+id/btnFim"
