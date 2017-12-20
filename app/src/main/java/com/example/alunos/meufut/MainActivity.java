@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
         itD = new Intent(this, DivisaoTimes.class);
         itM = new Intent(this, MultiOrganizar.class);
 
-
-        MobileAds.initialize(this, "ca-app-pub-5400461494591224~2056624881");
-
+        MobileAds.initialize(this, "ca-app-pub-1594606495855009~2242608510");
 
         a = (Button) findViewById(R.id.imageButton4);
         b = (Button) findViewById(R.id.imageButton5);
