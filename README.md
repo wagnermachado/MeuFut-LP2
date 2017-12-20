@@ -51,3 +51,4 @@
 - Correção de erros nos ADs
 - Correção de erros no landscape
 - Botão para exibir times
+- Opção de sortear várias vezes

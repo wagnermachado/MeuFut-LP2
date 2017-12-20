@@ -3,6 +3,7 @@ package com.example.alunos.meufut;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
@@ -39,6 +40,15 @@ public class MultiFimDeJogo extends AppCompatActivity {
 
         it = new Intent(this, MultiLista.class);
 
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
+
+        TextView salvarP = (TextView) findViewById(R.id.salvarPar);
+        TextView tT1 = (TextView)  findViewById(R.id.txtTime1);
+        TextView tT2 = (TextView)  findViewById(R.id.txtTime2);
+
+        EditText nomes1 = new EditText(MultiFimDeJogo.this);
+        EditText nomes2 = new EditText(MultiFimDeJogo.this);
+
         listaT = getIntent().getParcelableArrayListExtra("listaT");
         t1 = getIntent().getParcelableExtra("t1");
         t2 = getIntent().getParcelableExtra("t2");
@@ -58,6 +68,23 @@ public class MultiFimDeJogo extends AppCompatActivity {
         gols2B = (Button) findViewById(R.id.btnTime2);
         sim = (Button) findViewById(R.id.btnSim);
         nao = (Button) findViewById(R.id.btnNao);
+
+        salvarP.setTypeface(typeface);
+        tT1.setTypeface(typeface);
+        tT2.setTypeface(typeface);
+        sim.setTypeface(typeface);
+        nao.setTypeface(typeface);
+        time1T.setTypeface(typeface);
+        time2T.setTypeface(typeface);
+        nomes1.setTypeface(typeface);
+        nomes2.setTypeface(typeface);
+        gols1B.setTypeface(typeface);
+        gols2B.setTypeface(typeface);
+        sim.setTypeface(typeface);
+        nao.setTypeface(typeface);
+        gols1B.setTypeface(typeface);
+        gols2B.setTypeface(typeface);
+
 
         time1T.setText(nome1 + ": " + time1List);
         time2T.setText(nome2 + ": " + time2List);

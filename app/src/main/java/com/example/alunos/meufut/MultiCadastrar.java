@@ -113,7 +113,9 @@ public class MultiCadastrar extends AppCompatActivity {
                 } else {
                     listaT.clear();
 
-                    teste = lista;
+                    for (int i = 0; i < lista.size(); i++) {
+                        teste.add(lista.get(i));
+                    }
                     if (sorteio == true) {
                         String elenco = null;
                         for (int i = 0; i < iTimes; i++) {
@@ -193,9 +195,11 @@ public class MultiCadastrar extends AppCompatActivity {
                 if (i == 0) {
                     pessoa = lista.get(i);
                     list = pessoa.getNome();
-                } else {
+                } else if (i < 15) {
                     pessoa = lista.get(i);
                     list = list + ", " + pessoa.getNome();
+                } else if (i == 15) {
+                    list = list + ", ...";
                 }
             }
             listaB.setText(String.valueOf(list));

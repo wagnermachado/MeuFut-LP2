@@ -52,7 +52,6 @@ public class MultiLista extends AppCompatActivity {
         tt1.setTypeface(typeface);
         tt2.setTypeface(typeface);
         vs.setTypeface(typeface);
-        visu.setTypeface(typeface);
         vt1.setTypeface(typeface);
         vt2.setTypeface(typeface);
         ini.setTypeface(typeface);
@@ -128,18 +127,6 @@ public class MultiLista extends AppCompatActivity {
                 iTime2 = Integer.parseInt(time2.getText().toString());
 
                 if (iTime1 < 1 || iTime1 > iTimes || iTime2 < 1 || iTime2 > iTimes || TextUtils.isEmpty(time1.getText().toString()) || TextUtils.isEmpty(time2.getText().toString()) || iTime1 == iTime2) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MultiLista.this);
-                    builder.setTitle(String.valueOf(iTime1) + " - " + String.valueOf(iTime2) + " - " + String.valueOf(iTimes));
-
-                    builder.setPositiveButton("Sorteio", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-
-                    builder.show();
-
-
                     Toast.makeText(getApplicationContext(), "Valor inválido", Toast.LENGTH_SHORT).show();
                 } else {
                     t1 = listaT.get(--iTime1);

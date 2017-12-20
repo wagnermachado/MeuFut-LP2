@@ -35,6 +35,8 @@ public class OrganizarTimes extends AppCompatActivity {
     ArrayList<Pessoa> time1 = new ArrayList<>();
     ArrayList<Pessoa> time2 = new ArrayList<>();
     ArrayList<Pessoa> fora = new ArrayList<>();
+    ArrayList<Pessoa> teste = new ArrayList<>();
+
 
     Button organizar;
     Button continuar;
@@ -100,19 +102,24 @@ public class OrganizarTimes extends AppCompatActivity {
                 time2.clear();
                 fora.clear();
 
-                ArrayList<Pessoa> teste = lista;
+                for (int i = 0; i < lista.size(); i++) {
+                    teste.add(lista.get(i));
+                }
+
                 String numero = numero1.getText().toString();
                 boolean numjog = true;
                 int jogadores = 0;
-                numero1.setText("");
 
                 if (TextUtils.isEmpty(numero)) {
                     Toast.makeText(getApplicationContext(), "Nenhum valor foi inserido!", Toast.LENGTH_SHORT).show();
                     numjog = false;
+                    teste.clear();
                 } else {
                     jogadores = Integer.parseInt(numero);
                     if ((jogadores < 4) || (jogadores > 11)) {
                         numjog = false;
+                        Toast.makeText(getApplicationContext(), "Valor inválido!", Toast.LENGTH_SHORT).show();
+                        teste.clear();
                     }
                 }
 
@@ -153,7 +160,7 @@ public class OrganizarTimes extends AppCompatActivity {
                                 teste.remove(n);
                             }
 
-                            while (lista.size() != 0) {
+                            while (teste.size() != 0) {
                                 int n = rand.nextInt(teste.size());
                                 fora.add(teste.get(n));
                                 teste.remove(n);

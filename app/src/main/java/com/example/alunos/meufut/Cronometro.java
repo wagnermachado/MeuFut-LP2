@@ -120,25 +120,27 @@ public class Cronometro extends AppCompatActivity{
         parar.setTypeface(typefaceMS);
 
         gol1 = (Button) findViewById(R.id.btnGol1);
-        gol1.setTypeface(typeface);
         gol2 = (Button) findViewById(R.id.btnGol2);
-        gol2.setTypeface(typeface);
         cancela1 = (Button) findViewById(R.id.btnCancela1);
-        cancela1.setTypeface(typeface);
         cancela2 = (Button) findViewById(R.id.btnCancela2);
-        cancela2.setTypeface(typeface);
         pla1 = (Button) findViewById(R.id.plaTime1);
-        pla1.setTypeface(typeface);
         pla2 = (Button) findViewById(R.id.plaTime2);
-        pla2.setTypeface(typeface);
         fim = (Button) findViewById(R.id.btnFim);
-        fim.setTypeface(typeface);
         nomeTime1 = (EditText) findViewById(R.id.insTime1);
         nomeTime2 = (EditText) findViewById(R.id.insTime2);
         nomeTime1.setText("Time 1");
-        nomeTime1.setTypeface(typeface);
         nomeTime2.setText("Time 2");
+
+        gol1.setTypeface(typeface);
+        gol2.setTypeface(typeface);
+        cancela2.setTypeface(typeface);
+        cancela1.setTypeface(typeface);
+        pla1.setTypeface(typeface);
+        pla2.setTypeface(typeface);
+        fim.setTypeface(typeface);
+        nomeTime1.setTypeface(typeface);
         nomeTime2.setTypeface(typeface);
+
 
         relogio.setTypeface(typefaceDigital7);
         relogio.setBase(SystemClock.elapsedRealtime()); relogio.stop(); lastPause = SystemClock.elapsedRealtime();
@@ -158,6 +160,7 @@ public class Cronometro extends AppCompatActivity{
                 textoM = inputM.getText().toString();
                 if (TextUtils.isEmpty(textoM) || Integer.parseInt(textoM) == 0) {
                     Toast.makeText(getApplicationContext(), "Nenhum valor inserido.", Toast.LENGTH_LONG).show();
+                    contagem = false;
                 } else {
                     minutos = Integer.parseInt(textoM);
                     contagem = true;
@@ -274,7 +277,7 @@ public class Cronometro extends AppCompatActivity{
                 it.putExtra("gols1", gols1);
                 it.putExtra("gols2", gols2);
 
-                /*
+
                 if (contagem) {
 
                     limite.cancel();
@@ -285,7 +288,7 @@ public class Cronometro extends AppCompatActivity{
                     relogio.stop();
                     lastPause = SystemClock.elapsedRealtime();
 
-                }*/
+                }
 
                 startActivity(it);
 
