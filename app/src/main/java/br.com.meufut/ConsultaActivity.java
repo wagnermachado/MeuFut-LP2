@@ -35,7 +35,7 @@ public class ConsultaActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
                 Cursor cursorII;
-                String codigo;
+                final String codigo;
                 cursor.moveToPosition(position);
                 codigo = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco._IDPARTIDA));
 
@@ -46,16 +46,25 @@ public class ConsultaActivity extends AppCompatActivity {
                 String nome2 = cursorII.getString(cursorII.getColumnIndexOrThrow(CriaBanco.NOMETIME2));
                 String placar = cursorII.getString(cursorII.getColumnIndexOrThrow(CriaBanco.PLACAR));
 
-                AlertDialog alertDialog = new AlertDialog.Builder(ConsultaActivity.this).create();
-                alertDialog.setTitle(nome1 + " " + placar + " " + nome2);
-                alertDialog.setMessage(time1 + " vs. " + time2);
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                alertDialog.show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(ConsultaActivity.this);
+                builder.setTitle(nome1 + " " + placar + " " + nome2);
+                builder.setMessage(time1 + " vs. " + time2);
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        crud.apagaRegistro(Integer.parseInt(codigo));
+                        finish();
+                    }
+                });
+
+                builder.show();
 
             }
 

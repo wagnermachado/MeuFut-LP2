@@ -84,5 +84,11 @@ public class BancoController {
 
     }
 
+    public void apagaRegistro(int id) {
+        String where = CriaBanco._IDPARTIDA + " = " + id;
+        db = banco.getReadableDatabase();
+        db.delete(CriaBanco.TABELA_PARTIDA, where, null);
+        db.close();
+    }
 }
 

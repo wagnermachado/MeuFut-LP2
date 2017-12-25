@@ -60,3 +60,4 @@
 **v2.0.1**
 
 - Opção parar/zerar contagem regressiva
+- Deleção de registros no histórico
