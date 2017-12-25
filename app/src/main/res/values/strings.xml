@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">MeuFut</string>
     <string name="banner_test">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="banner_fim">ca-app-pub-1594606495855009/1859465135</string>
+    <string name="banner_cronometro">ca-app-pub-1594606495855009/9782967431</string>
+    <string name="banner_dinheiro">ca-app-pub-1594606495855009/7275443341</string>
+    <string name="banner_internet">ca-app-pub-1594606495855009/6922544963</string>
+    <string name="banner_multilista">ca-app-pub-1594606495855009/8274444649</string>
+    <string name="banner_multiorganizar">ca-app-pub-1594606495855009/9559606153</string>
+    <string name="banner_organizar">ca-app-pub-1594606495855009/8054952795</string>
+    <string name="banner_times">ca-app-pub-1594606495855009/8752176544</string>
+
 </resources>

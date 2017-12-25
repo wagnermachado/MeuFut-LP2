@@ -8,7 +8,7 @@
     android:layout_height="fill_parent"
     android:weightSum="1"
     android:background="@drawable/fundopagina"
-    >>
+    >
 
     <Chronometer
         android:id="@+id/relogio"
@@ -247,6 +247,7 @@
         android:inputType="textPersonName"
         android:shadowColor="@android:color/holo_red_dark"
         android:textAlignment="center"
+        android:theme="@style/MyEditTextTheme"
         app:layout_constraintBottom_toTopOf="@+id/plaTime2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/insTime1"
@@ -265,6 +266,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textAlignment="center"
+        android:theme="@style/MyEditTextTheme"
         app:layout_constraintBottom_toTopOf="@+id/plaTime1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -282,7 +284,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/banner_test"
+        ads:adUnitId="@string/banner_cronometro"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"

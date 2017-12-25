@@ -62,7 +62,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_test"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/banner_organizar"></com.google.android.gms.ads.AdView>
 
     <Button
         android:id="@+id/btnLista"

@@ -1,4 +1,4 @@
-# Patch Notes v1.9
+# Patch Notes v2.0.1
 
 **v1.0**
 
@@ -52,3 +52,11 @@
 - Correção de erros no landscape
 - Botão para exibir times
 - Opção de sortear várias vezes
+
+**v2.0**
+
+**- POSTADO**
+
+**v2.0.1**
+
+- Opção parar/zerar contagem regressiva
