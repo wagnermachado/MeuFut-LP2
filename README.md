@@ -1,4 +1,4 @@
-# Patch Notes v2.0.1
+# Patch Notes v2.0.2
 
 **v1.0**
 
@@ -61,3 +61,7 @@
 
 - Opção parar/zerar contagem regressiva
 - Deleção de registros no histórico
+
+**v2.0.2**
+
+- Correção de bugs

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -84,6 +85,10 @@ public class MultiLista extends AppCompatActivity {
 
         time1 = (EditText) findViewById(R.id.txtTime1);
         time2 = (EditText) findViewById(R.id.txtTime2);
+
+
+        time1.setInputType(InputType.TYPE_CLASS_NUMBER);
+        time2.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         it = new Intent(this, MultiCronometro.class);
         itV = new Intent(this, MainActivity.class);

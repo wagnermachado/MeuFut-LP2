@@ -60,7 +60,7 @@ public class MultiCronometro extends AppCompatActivity{
     long minutos;
 
     private  InterstitialAd mInterstitialAd;
-    boolean crono, contagem;
+    boolean crono, contagem, bug;
     private AdView mAdView;
 
     @Override
@@ -68,6 +68,8 @@ public class MultiCronometro extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro);
+
+        bug = false;
 
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mInterstitialAd = new InterstitialAd(this);
@@ -163,6 +165,8 @@ public class MultiCronometro extends AppCompatActivity{
         builder.setPositiveButton("Configurar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                bug = true;
+
                 textoM = inputM.getText().toString();
                 if (TextUtils.isEmpty(textoM) || Integer.parseInt(textoM) == 0) {
                     Toast.makeText(getApplicationContext(), "Nenhum valor inserido.", Toast.LENGTH_LONG).show();
@@ -188,6 +192,8 @@ public class MultiCronometro extends AppCompatActivity{
         iniciar.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 if (!crono) {
+                    bug = false;
+
                     relogio.start();
                     relogio.setBase(relogio.getBase() + SystemClock.elapsedRealtime() - lastPause);
                     crono = true;
@@ -272,16 +278,18 @@ public class MultiCronometro extends AppCompatActivity{
             public void onClick(View v) {
                 it.putExtra("iTimes", iTimes);
 
-                if (contagem) {
+                if (!bug) {
+                    if (contagem) {
 
-                    limite.cancel();
-                    contagem = false;
-                    crono = false;
+                        limite.cancel();
+                        contagem = false;
+                        crono = false;
 
-                    relogio.setBase(SystemClock.elapsedRealtime());
-                    relogio.stop();
-                    lastPause = SystemClock.elapsedRealtime();
+                        relogio.setBase(SystemClock.elapsedRealtime());
+                        relogio.stop();
+                        lastPause = SystemClock.elapsedRealtime();
 
+                    }
                 }
 
                 it.putExtra("t1", t1);
@@ -304,8 +312,10 @@ public class MultiCronometro extends AppCompatActivity{
 
     @Override
     public void onBackPressed() {
-        if (contagem) {
-            limite.cancel();
+        if (!bug) {
+            if (contagem) {
+                limite.cancel();
+            }
         }
         super.onBackPressed();
     }

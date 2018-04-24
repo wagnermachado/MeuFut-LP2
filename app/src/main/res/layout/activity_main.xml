@@ -9,7 +9,7 @@
     android:layout_height="fill_parent"
     android:weightSum="1"
     android:background="@drawable/fundopagina"
-    >>
+    >
 
     <ImageView
         android:id="@+id/imageView"

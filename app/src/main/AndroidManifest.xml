@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.meufut">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -10,28 +11,46 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.com.meufut.TelaInicial">
+        <activity android:name=".TelaInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="br.com.meufut.Cronometro" android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity android:name="br.com.meufut.MainActivity"></activity>
-
-        <activity android:name="br.com.meufut.DivisaoDinheiro" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.DivisaoTimes" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.OrganizarTimes" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.NavegadorInternet" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.FimDeJogo"></activity>
-        <activity android:name="br.com.meufut.ConsultaActivity"></activity>
-        <activity android:name="br.com.meufut.MultiOrganizar" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.MultiCadastrar" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.MultiLista" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.MultiCronometro" android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name="br.com.meufut.MultiFimDeJogo" android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".Cronometro"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".DivisaoDinheiro"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DivisaoTimes"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".OrganizarTimes"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".NavegadorInternet"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".FimDeJogo" />
+        <activity android:name=".ConsultaActivity" />
+        <activity
+            android:name=".MultiOrganizar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MultiCadastrar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MultiLista"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MultiCronometro"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MultiFimDeJogo"
+            android:windowSoftInputMode="adjustPan" />
 
     </application>
 

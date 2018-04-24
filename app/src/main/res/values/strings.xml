@@ -10,5 +10,11 @@
     <string name="banner_multiorganizar">ca-app-pub-1594606495855009/9559606153</string>
     <string name="banner_organizar">ca-app-pub-1594606495855009/8054952795</string>
     <string name="banner_times">ca-app-pub-1594606495855009/8752176544</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>
