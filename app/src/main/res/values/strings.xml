@@ -17,4 +17,11 @@
 
     <string name="action_settings">Settings</string>
 
+    <string-array name="spinner">
+        <item></item>
+        <item>Dê 5 estrelas!</item>
+        <item>WAVE no Facebook</item>
+        <item>Conheça nossos apps!</item>
+    </string-array>
+
 </resources>

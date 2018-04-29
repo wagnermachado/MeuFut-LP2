@@ -1,4 +1,4 @@
-# Patch Notes v2.0.2
+# Patch Notes v2.0.2.1
 
 **v1.0**
 
@@ -65,3 +65,8 @@
 **v2.0.2**
 
 - Correção de bugs
+
+	**v2.0.2.1**
+	
+	- Spinner para redirecionar
+	- Layout do cronômetro
