@@ -1,4 +1,4 @@
-# Patch Notes v2.0.2.1
+# Patch Notes v2.0.3
 
 **v1.0**
 
@@ -70,3 +70,7 @@
 	
 	- Spinner para redirecionar
 	- Layout do cronômetro
+
+**v2.0.3**
+
+- Sistema de balanceamento

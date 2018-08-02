@@ -11,9 +11,11 @@ public class Pessoa implements Parcelable{
 
     private String nome;
     private int time = 0;
+    private int rating = 1;
 
-    public Pessoa(String nome) {
+    public Pessoa(String nome, float rating) {
         this.nome = nome;
+        this.rating = Math.round(rating);
     }
 
     public Pessoa(String nome, int time) {
@@ -49,5 +51,9 @@ public class Pessoa implements Parcelable{
 
     public String getNome() {
         return this.nome;
+    }
+
+    public int getRating() {
+        return this.rating;
     }
 }

@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -34,6 +35,7 @@ public class OrganizarTimes extends AppCompatActivity {
     ArrayList<Pessoa> fora = new ArrayList<>();
     ArrayList<Pessoa> teste = new ArrayList<>();
 
+    int forca1, forca2;
 
     Button organizar;
     Button continuar;
@@ -43,6 +45,7 @@ public class OrganizarTimes extends AppCompatActivity {
     TextView home, away, out, jpt;
 
     AdView mAdView;
+    Pessoa p;
 
     @Override
 
@@ -53,6 +56,10 @@ public class OrganizarTimes extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/rockwell.otf");
         jpt = (TextView) findViewById(R.id.txt1);
         jpt.setTypeface(typeface);
+
+
+        forca1 = 0;
+        forca2 = 0;
 
         int orient=this.getResources().getConfiguration().orientation;
 
@@ -95,81 +102,98 @@ public class OrganizarTimes extends AppCompatActivity {
         organizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                time1.clear();
-                time2.clear();
-                fora.clear();
+                do {
+                    time1.clear();
+                    time2.clear();
+                    fora.clear();
+                    forca1 = 0;
+                    forca2 = 0;
 
-                for (int i = 0; i < lista.size(); i++) {
-                    teste.add(lista.get(i));
-                }
 
-                String numero = numero1.getText().toString();
-                boolean numjog = true;
-                int jogadores = 0;
+                    for (int i = 0; i < lista.size(); i++) {
+                        teste.add(lista.get(i));
+                    }
 
-                if (TextUtils.isEmpty(numero)) {
-                    Toast.makeText(getApplicationContext(), "Nenhum valor foi inserido!", Toast.LENGTH_SHORT).show();
-                    numjog = false;
-                    teste.clear();
-                } else {
-                    jogadores = Integer.parseInt(numero);
-                    if ((jogadores < 4) || (jogadores > 11)) {
+                    String numero = numero1.getText().toString();
+                    boolean numjog = true;
+                    int jogadores = 0;
+
+                    if (TextUtils.isEmpty(numero)) {
+                        Toast.makeText(getApplicationContext(), "Nenhum valor foi inserido!", Toast.LENGTH_SHORT).show();
                         numjog = false;
-                        Toast.makeText(getApplicationContext(), "Valor inválido!", Toast.LENGTH_SHORT).show();
                         teste.clear();
-                    }
-                }
-
-
-                if (numjog) {
-                    if (lista.size() / jogadores < 2) {
-                        while (teste.size() != 0) {
-                            int n = rand.nextInt(teste.size());
-                            time1.add(teste.get(n));
-                            teste.remove(n);
-                            if (teste.size() != 0) {
-                                n = rand.nextInt(teste.size());
-                                time2.add(teste.get(n));
-                                teste.remove(n);
-                            }
+                    } else {
+                        jogadores = Integer.parseInt(numero);
+                        if ((jogadores < 4) || (jogadores > 11)) {
+                            numjog = false;
+                            Toast.makeText(getApplicationContext(), "Valor inválido!", Toast.LENGTH_SHORT).show();
+                            teste.clear();
                         }
                     }
-                    if (lista.size() / jogadores == 2) {
-                        if (lista.size() % jogadores == 0) {
-                           while (teste.size() != 0) {
-                               int n = rand.nextInt(teste.size());
-                               time1.add(teste.get(n));
-                               teste.remove(n);
 
-                               n = rand.nextInt(teste.size());
-                               time2.add(teste.get(n));
-                               teste.remove(n);
-                           }
-                        }
-                        if (lista.size() % jogadores != 0) {
-                            for (int i = 0; i < jogadores; i++) {
-                                int n = rand.nextInt(teste.size());
-                                time1.add(teste.get(n));
-                                teste.remove(n);
 
-                                n = rand.nextInt(teste.size());
-                                time2.add(teste.get(n));
-                                teste.remove(n);
-                            }
-
+                    if (numjog) {
+                        if (lista.size() / jogadores < 2) {
                             while (teste.size() != 0) {
                                 int n = rand.nextInt(teste.size());
-                                fora.add(teste.get(n));
+                                time1.add(teste.get(n));
+                                forca1 += teste.get(n).getRating();
                                 teste.remove(n);
+                                if (teste.size() != 0) {
+                                    n = rand.nextInt(teste.size());
+                                    time2.add(teste.get(n));
+                                    forca2 += teste.get(n).getRating();
+                                    teste.remove(n);
+                                }
                             }
                         }
+                        if (lista.size() / jogadores == 2) {
+                            if (lista.size() % jogadores == 0) {
+                                while (teste.size() != 0) {
+                                    int n = rand.nextInt(teste.size());
+                                    time1.add(teste.get(n));
+                                    forca1 += teste.get(n).getRating();
+                                    teste.remove(n);
+
+                                    n = rand.nextInt(teste.size());
+                                    time2.add(teste.get(n));
+                                    forca2 += teste.get(n).getRating();
+                                    teste.remove(n);
+                                }
+                            }
+                            if (lista.size() % jogadores != 0) {
+                                for (int i = 0; i < jogadores; i++) {
+                                    int n = rand.nextInt(teste.size());
+                                    time1.add(teste.get(n));
+                                    forca1 += teste.get(n).getRating();
+                                    teste.remove(n);
+
+                                    n = rand.nextInt(teste.size());
+                                    time2.add(teste.get(n));
+                                    forca2 += teste.get(n).getRating();
+                                    teste.remove(n);
+                                }
+
+                                while (teste.size() != 0) {
+                                    int n = rand.nextInt(teste.size());
+                                    fora.add(teste.get(n));
+                                    teste.remove(n);
+                                }
+                            }
+                        }
+
                     }
 
-                }
-                bLista.setVisibility(View.VISIBLE);
+                    Toast.makeText(getApplicationContext(), String.valueOf(forca1) + ", " + String.valueOf(forca2),
+                            Toast.LENGTH_SHORT).show();
+                    bLista.setVisibility(View.VISIBLE);
+
+                } while (Math.abs(forca1-forca2) > 3);
             }
 
         });
+
+
 
         bLista.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,7 +233,7 @@ public class OrganizarTimes extends AppCompatActivity {
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(OrganizarTimes.this);
-                builder.setMessage("Time 1: " + time1List + "\n\n" + "Time 2: " + time2List + "\n\n" + "Fora: " + foraList);
+                builder.setMessage("Time 1 (" + String.valueOf(forca1) + "*) : " + time1List + "\n\n" + "Time 2 (" + String.valueOf(forca2) + "*) : " + time2List + "\n\n" + "Fora: " + foraList);
 
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override

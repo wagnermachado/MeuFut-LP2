@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class DivisaoTimes extends AppCompatActivity {
     Pessoa pessoa;
     TextView dnj;
     AdView mAdView;
+    RatingBar mRatingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,18 @@ public class DivisaoTimes extends AppCompatActivity {
             mAdView.loadAd(adRequest);
         }
 
+        mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
 
+        mRatingBar.setRating(1);
+
+        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+
+            @Override public void onRatingChanged(RatingBar ratingBar, float rating,
+                                                  boolean fromUser) {
+                if(rating<1.0f)
+                    ratingBar.setRating(1.0f);
+            }
+        });
 
         cadastrar = (Button) findViewById(R.id.btnCadastrar);
         dnj = (TextView) findViewById(R.id.salvarPar);
@@ -75,10 +88,10 @@ public class DivisaoTimes extends AppCompatActivity {
                 for (int i = 0; i < lista.size(); i++) {
                     if (i == 0) {
                         pessoa = lista.get(i);
-                        list = pessoa.getNome();
+                        list = pessoa.getNome() + " (" + pessoa.getRating() + ")";
                     } else {
                         pessoa = lista.get(i);
-                        list = list + ", " + pessoa.getNome();
+                        list = list + ", " + pessoa.getNome() + " (" + pessoa.getRating() + ")";
                     }
                 }
 
@@ -124,11 +137,13 @@ public class DivisaoTimes extends AppCompatActivity {
     public void cadastrar(View v) {
         EditText nome1 = (EditText) findViewById(R.id.txtNome);
         String nome = nome1.getText().toString();
+        float rating = mRatingBar.getRating();
 
         if (!TextUtils.isEmpty(nome))
-            lista.add(new Pessoa(nome));
+            lista.add(new Pessoa(nome, rating));
 
         nome1.setText("");
+        mRatingBar.setRating(1);
 
         this.mostraLista();
 

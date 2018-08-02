@@ -20,21 +20,20 @@
         android:id="@+id/txtNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/salvarPar"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_below="@+id/salvarPar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:theme="@style/MyEditTextTheme"
-        />
+        android:theme="@style/MyEditTextTheme" />
 
     <Button
         android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/txtNome"
-        android:layout_marginTop="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ratingBar"
+        android:layout_marginTop="19dp"
         android:background="@drawable/btn_selector"
         android:onClick="cadastrar"
         android:text="Cadastrar jogador"
@@ -48,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnRemover"
         android:layout_below="@+id/btnLista"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/btn_selector"
         android:text="Confirmar Equipes"
         android:textAllCaps="false"
@@ -61,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnCadastrar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_selector"
         android:onClick="remover"
         android:text="Remover jogador"
@@ -73,11 +72,11 @@
         android:id="@+id/btnLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/btnRemover"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="23dp"
         android:background="@drawable/botaocomecar"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black" />
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -89,4 +88,15 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_times">
     </com.google.android.gms.ads.AdView>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/txtNome"
+        android:layout_marginEnd="11dp"
+        android:numStars="3"
+        android:stepSize="1"
+        />
 </RelativeLayout>

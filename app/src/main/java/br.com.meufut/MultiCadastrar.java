@@ -212,7 +212,7 @@ public class MultiCadastrar extends AppCompatActivity {
         String nome = nome1.getText().toString();
 
         if (!TextUtils.isEmpty(nome))
-            lista.add(new Pessoa(nome));
+            lista.add(new Pessoa(nome, 1.0f));
 
         nome1.setText("");
 
